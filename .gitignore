@@ -1,0 +1,9 @@
+# ignore hidden ( '.' ) files, but don't ignore '.gitignore'
+.*
+!.gitignore
+
+# Ignore java/android files generated during compilation
+build/
+androidTest/
+test/
+
