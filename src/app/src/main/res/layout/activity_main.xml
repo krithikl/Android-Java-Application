@@ -10,16 +10,75 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent" tools:layout_editor_absoluteY="3dp"
-            tools:layout_editor_absoluteX="3dp">
+            tools:layout_editor_absoluteX="3dp" android:background="#65499c">
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:gravity="end">
-            <ImageView
-                    android:layout_width="44dp"
-                    android:layout_height="43dp" app:srcCompat="@drawable/search_icon" android:id="@+id/imageView5"
-                    android:theme="@style/Theme.ComponentCompanion.Button" android:scaleType="fitXY"
-                    android:background="@color/customPurple" android:padding="5dp" android:contentDescription="TODO"/>
+                android:layout_height="255dp" android:layout_weight="1">
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="338dp"
+                    android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+            >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="346dp"
+                        android:layout_height="49dp"
+                        android:hint="Search"
+                        android:background="@drawable/round_style"
+
+                />
+            </com.google.android.material.textfield.TextInputLayout>
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="59dp" app:srcCompat="@drawable/search_icon"
+                    android:id="@+id/imageButton3"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/purple_200"
+
+
+            />
         </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="639dp" android:layout_weight="1">
+
+            <Button
+                    android:background="@drawable/round_style"
+                    android:text="@string/passiveComponents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp" android:id="@+id/category1Button" android:layout_weight="1"
+                    android:theme="@style/Theme.ComponentCompanion.Button" android:textSize="12sp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+
+            />
+
+            <Button
+                    android:background="@drawable/round_style"
+                    android:text="@string/activeComponents"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp" android:id="@+id/category2Button" android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+            />
+
+            <Button
+                    android:background="@drawable/round_style"
+                    android:text="@string/passiveComponents"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp" android:id="@+id/category3Button" android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+            />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
