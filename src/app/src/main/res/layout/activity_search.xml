@@ -6,8 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".SearchActivity">
-
-    <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -53,7 +51,8 @@
                         android:layout_height="match_parent">
                     <androidx.recyclerview.widget.RecyclerView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" tools:listitem="@layout/search_recycler"
+                            android:layout_height="match_parent"
+                            tools:listitem="@layout/search_recycler"
                             tools:itemCount="20"/>
                 </LinearLayout>
             </LinearLayout>
