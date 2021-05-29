@@ -71,7 +71,8 @@
                         android:layout_marginStart="5dp"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@drawable/transistor"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:background="@android:color/transparent"
                 />
 
 
@@ -84,6 +85,7 @@
                         app:layout_constraintTop_toTopOf="@id/topPick1"
                         app:srcCompat="@drawable/inductor"
                         android:scaleType="centerInside"
+                        android:background="@android:color/transparent"
                 />
 
                 <ImageButton
@@ -94,7 +96,8 @@
                         android:layout_marginStart="5dp"
                         app:layout_constraintTop_toTopOf="@id/topPick2"
                         app:srcCompat="@drawable/capacitor"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:background="@android:color/transparent"
                 />
 
                 <ImageButton
@@ -105,7 +108,8 @@
                         android:layout_marginStart="5dp"
                         app:layout_constraintTop_toTopOf="@id/topPick3"
                         app:srcCompat="@drawable/integrated_circuit"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:background="@android:color/transparent"
                 />
 
                 <ImageButton
@@ -116,7 +120,8 @@
                         android:layout_marginStart="5dp"
                         app:layout_constraintTop_toTopOf="@id/topPick4"
                         app:srcCompat="@drawable/opamp"
-                        android:scaleType="centerInside"/>
+                        android:scaleType="centerInside"
+                        android:background="@android:color/transparent"
                 />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </HorizontalScrollView>
