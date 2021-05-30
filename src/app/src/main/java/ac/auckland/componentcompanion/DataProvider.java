@@ -8,7 +8,7 @@ public class DataProvider {
 	 * Components data from https://octopart.com/ (including images)
 	 *
 	 */
-	static String[][] data = {
+	private static final String[][] data = {
 		/* Category 1: Resistors  */
 		/* Dataformat:
 		 * {Name; Make; Model; Price (NZ Cents); Mount Type; Resistance (Ohms)}
