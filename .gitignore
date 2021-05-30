@@ -6,4 +6,4 @@
 build/
 androidTest/
 test/
-
+local.properties
