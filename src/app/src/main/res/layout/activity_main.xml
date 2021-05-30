@@ -145,7 +145,7 @@
 
             <Button
                     android:background="@drawable/round_style"
-                    android:text="@string/passiveComponents"
+                    android:text="@string/category_one"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp" android:id="@+id/passiveButton" android:layout_weight="1"
                     android:theme="@style/Theme.ComponentCompanion.Button" android:textSize="12sp"
@@ -155,7 +155,7 @@
             />
             <Button
                     android:background="@drawable/round_style"
-                    android:text="@string/activeComponents"
+                    android:text="@string/category_two"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp" android:id="@+id/activeButton" android:layout_weight="1"
@@ -165,7 +165,7 @@
 
             <Button
                     android:background="@drawable/round_style"
-                    android:text="@string/integratedCircuits"
+                    android:text="@string/category_three"
                     android:textSize="12sp"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp" android:id="@+id/circuitsButton" android:layout_weight="1"
