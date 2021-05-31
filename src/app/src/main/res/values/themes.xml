@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.ComponentCompanion" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#1b1b1b</item>
+        <item name="colorPrimaryVariant">#ffcc80</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -20,7 +20,8 @@
 
     <!-- Custom Theme for buttons test. -->
     <style name="Theme.ComponentCompanion.Button">
-        <item name="android:windowBackground">#9162e4</item>
+
+        <item name="android:backgroundTint">#ffcc80</item>
     </style>
 
 

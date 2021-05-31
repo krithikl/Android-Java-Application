@@ -8,7 +8,7 @@
     <string name="category_three">Inductors</string>
 
 
-    <string name="searchItemText">  Item Name\n\nItem Detail\t\t\t\t\t\t\tItem Price</string>
+    <string name="searchItemText">  Make</string>
 
     <string name="action_settings">Settings</string>
 </resources>

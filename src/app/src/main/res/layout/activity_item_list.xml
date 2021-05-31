@@ -5,49 +5,38 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".itemListActivity">
+        tools:context=".ItemListActivity">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#65499c" android:id="@+id/linearLayout">
-        <LinearLayout
-                android:orientation="horizontal"
+        <EditText
                 android:layout_width="match_parent"
-                android:layout_height="106dp" android:layout_weight="3">
-
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:inputType="textPersonName"
-                    android:text="Category"
-                    android:ems="10"
-                    android:id="@+id/category_text"
-                    android:textAlignment="center"
-                    android:layout_marginTop="5dp"
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/white"
-                    android:textIsSelectable="false"
-                    android:clickable="false"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-            />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text="Category"
+                android:ems="10"
+                android:id="@+id/category_text"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/white"
+                android:textIsSelectable="false"
+                android:clickable="false"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+        />
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_weight="3">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                           android:orientation="vertical">
-                <LinearLayout
-                        android:orientation="horizontal"
+                <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-                    <androidx.recyclerview.widget.RecyclerView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            tools:listitem="@layout/category_recycler"
-                            tools:itemCount="20"/>
-                </LinearLayout>
+                        android:layout_height="match_parent"
+                        tools:listitem="@layout/category_recycler"
+                        android:id="@+id/category_items"/>
             </LinearLayout>
         </ScrollView>
 

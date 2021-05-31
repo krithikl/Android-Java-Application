@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 			return items.size();
 		}
 
-		/* Constructor initialises the data we are going to dislpay */
+		/* Constructor initialises the data we are going to display */
 		public TopPicksAdapter(ArrayList<Item> items) {
 			this.items = items;
 		}
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 		cat0Btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent activityIntent = new Intent(MainActivity.this, itemListActivity.class);
+				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Resistor");
 				startActivity(activityIntent);
 			}
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 		cat1Btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent activityIntent = new Intent(MainActivity.this, itemListActivity.class);
+				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Capacitor");
 				startActivity(activityIntent);
 			}
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
 		cat2Btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent activityIntent = new Intent(MainActivity.this, itemListActivity.class);
+				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Inductor");
 				startActivity(activityIntent);
 			}

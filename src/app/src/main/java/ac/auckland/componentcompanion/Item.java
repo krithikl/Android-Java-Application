@@ -50,5 +50,7 @@ public class Item {
 	public String getPreview() {
 		return preview;
 	}
+
+	public float getValue() { return value; }
 }
 

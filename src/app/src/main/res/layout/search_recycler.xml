@@ -7,7 +7,7 @@
   <ImageButton
           android:layout_width="50dp"
           android:layout_height="78dp"
-          android:id="@+id/searchImage"
+          android:id="@+id/image"
           android:layout_weight="1"
           android:scaleType="centerInside"
           android:backgroundTint="@android:color/transparent"
@@ -25,7 +25,7 @@
           android:layout_marginRight="10dp"
           android:backgroundTint="@color/purple_200"
           android:background="@drawable/round_style"
-          android:id="@+id/searchDetails"
+          android:id="@+id/make"
           android:textAlignment="textStart"
           android:theme="@style/Theme.ComponentCompanion.Button"
           android:textAllCaps="false"/>

@@ -52,11 +52,11 @@ public class DataLoader {
 
 	public Category getCategory(String name) {
 		switch (name) {
-			case "Resistors":
+			case "Resistor":
 				return category0;
-			case "Capacitors":
+			case "Capacitor":
 				return category1;
-			case "Inductors":
+			case "Inductor":
 				return category2;
 			default:
 				return null;

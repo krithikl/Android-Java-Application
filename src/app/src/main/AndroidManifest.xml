@@ -11,7 +11,7 @@
             android:theme="@style/Theme.ComponentCompanion">
         <activity android:name="ac.auckland.componentcompanion.itemDetailsActivity">
         </activity>
-        <activity android:name="ac.auckland.componentcompanion.itemListActivity">
+        <activity android:name="ac.auckland.componentcompanion.ItemListActivity">
         </activity>
         <activity
                 android:name="ac.auckland.componentcompanion.SearchActivity"
