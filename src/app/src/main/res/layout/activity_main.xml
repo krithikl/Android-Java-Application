@@ -13,63 +13,65 @@
             tools:layout_editor_absoluteX="91dp" android:background="#65499c" android:id="@+id/linearLayout">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:orientation="horizontal">
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_weight="3"
+                android:orientation="horizontal">
 
             <SearchView
-                android:id="@+id/searchBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/round_style"
-                android:iconifiedByDefault="false"
-                android:queryHint="Search" />
+                    android:id="@+id/searchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/round_style"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search"/>
         </LinearLayout>
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:clickable="false"
-            android:editable="false"
-            android:ems="10"
-            android:text="Top Picks"
-            android:textColor="@color/white"
-            android:textIsSelectable="false" />
-
+                android:id="@+id/editTextTextPersonName7"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:clickable="false"
+                android:editable="false"
+                android:ems="10"
+                android:text="Top Picks"
+                android:textColor="@color/white"
+                android:textIsSelectable="false"/>
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_weight="3">
+                android:layout_width="match_parent"
+                android:layout_height="198dp"
+                android:layout_weight="3">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/top_picks"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                tools:listitem="@layout/top_picks_recycler" />
+                    android:id="@+id/top_picks"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/top_picks_recycler"/>
         </ScrollView>
 
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="3"/>
         <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:clickable="false"
-            android:editable="false"
-            android:ems="10"
-            android:inputType="none"
-            android:text="Categories"
-            android:textColor="@color/white"
-            android:textIsSelectable="false"
-            />
+                android:id="@+id/editTextTextPersonName2"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:clickable="false"
+                android:editable="false"
+                android:ems="10"
+                android:inputType="none"
+                android:text="Categories"
+                android:textColor="@color/white"
+                android:textIsSelectable="false"
+        />
 
         <LinearLayout
             android:layout_width="match_parent"
