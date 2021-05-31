@@ -1,7 +1,10 @@
 package ac.auckland.componentcompanion;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.transition.Explode;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.SearchView;
 import androidx.activity.OnBackPressedCallback;
@@ -22,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         cat0Btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent catActivity = new Intent(MainActivity.this, itemListActivity.class);
+
                 startActivity(catActivity);
+
             }
         });
 
