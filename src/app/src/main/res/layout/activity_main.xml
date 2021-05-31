@@ -11,102 +11,107 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" tools:layout_editor_absoluteY="0dp"
             tools:layout_editor_absoluteX="91dp" android:background="#65499c" android:id="@+id/linearLayout">
+
         <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="499dp" android:layout_weight="3">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
             <SearchView
-                    android:layout_margin="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/round_style"
-                    android:queryHint="Search"
-                    android:iconifiedByDefault="false"
-
-
-                    android:id="@+id/searchBar"/>
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_style"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search" />
         </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="464dp" android:layout_weight="3">
-            <EditText
-                    android:layout_width="200dp"
-                    android:layout_height="61dp"
-                    android:text="Top Picks"
-                    android:ems="10"
-                    android:id="@+id/editTextTextPersonName7" android:layout_weight="1"
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/white"
-                    android:layout_marginLeft="10dp"
-                    android:clickable="false"
-                    android:textIsSelectable="false"
-                    android:editable="false"
-            />
 
-        </LinearLayout>
-        <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="581dp" android:layout_weight="3"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp">
+        <EditText
+            android:id="@+id/editTextTextPersonName7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:clickable="false"
+            android:editable="false"
+            android:ems="10"
+            android:text="Top Picks"
+            android:textColor="@color/white"
+            android:textIsSelectable="false" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_weight="3">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/top_picks"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="horizontal"
                 tools:listitem="@layout/top_picks_recycler" />
-        </HorizontalScrollView>
-        <EditText
-                android:layout_width="203dp"
-                android:layout_height="178dp"
-                android:inputType="none"
-                android:text="Categories"
-                android:ems="10"
-                android:id="@+id/editTextTextPersonName2" android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/white"
-                android:layout_marginLeft="10dp"
-                android:clickable="false"
-                android:textIsSelectable="false"
-                android:editable="false"
+        </ScrollView>
 
-        />
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:clickable="false"
+            android:editable="false"
+            android:ems="10"
+            android:inputType="none"
+            android:text="Categories"
+            android:textColor="@color/white"
+            android:textIsSelectable="false"
+            />
 
         <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="509dp" android:layout_weight="2">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
             <Button
-                    android:background="@drawable/round_style"
-                    android:text="@string/category_one"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp" android:id="@+id/cat0Btn" android:layout_weight="1"
-                    android:theme="@style/Theme.ComponentCompanion.Button" android:textSize="12sp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
+                android:id="@+id/cat0Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_style"
+                android:text="@string/category_one"
+                android:textSize="12sp"
+                android:theme="@style/Theme.ComponentCompanion.Button"
 
-            />
-            <Button
-                    android:background="@drawable/round_style"
-                    android:text="@string/category_two"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp" android:id="@+id/cat1Btn" android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-            />
+                />
 
             <Button
-                    android:background="@drawable/round_style"
-                    android:text="@string/category_three"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp" android:id="@+id/cat2Btn" android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"
-            />
+                android:id="@+id/cat1Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_style"
+                android:text="@string/category_two"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/cat2Btn"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_style"
+                android:text="@string/category_three"
+                android:textSize="12sp" />
 
         </LinearLayout>
 

@@ -1,6 +1,9 @@
 package ac.auckland.componentcompanion;
 
+import android.util.Log;
+
 public class Item {
+	private static final String TAG = "ac.auckland.componentcampanion.Item.java";
 	private static int nextID = 0;
 
 	private int id;
@@ -21,7 +24,7 @@ public class Item {
 		this.price = price;
 		this.mount = mount;
 		this.value = value;
-		this.preview = model.concat(".jpg") ;
+		this.preview = "dataprovider/".concat(model.concat(".jpg"));
 	}
 
 	public int getId() {

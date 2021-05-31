@@ -7,7 +7,6 @@
     <ImageButton
             android:layout_width="50dp"
             android:layout_height="78dp"
-            app:srcCompat="@drawable/inductor"
             android:id="@+id/searchImage"
             android:layout_weight="1"
             android:scaleType="centerInside"

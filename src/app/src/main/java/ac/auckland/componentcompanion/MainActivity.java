@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 		/* Replace content of a view */
 		public void onBindViewHolder(ViewHolder viewholder, final int position) {
 			String imageName = items.get(position).getPreview();
-			viewholder.imageButton.setImageResource(getResources().getIdentifier(imageName, "drawable", getPackageName()));
+			viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(MainActivity.this, imageName));
 		}
 
 		public int getItemCount() {
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 		topPicks.add(dloader.getItem(24));
 		topPicks.add(dloader.getItem(28));
 
-		recyclerView.setLayoutManager(new LinearLayoutManager(this));
+		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 		recyclerView.setAdapter(adapter);
 
 		Button cat0Btn = findViewById(R.id.cat0Btn);
