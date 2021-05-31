@@ -1,6 +1,7 @@
 package ac.auckland.componentcompanion;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
 			public ViewHolder(View itemView) {
 				super(itemView);
 				imageButton = itemView.findViewById(R.id.image);
+
+				imageButton.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						Log.d(TAG, "Top Pick Item Clicked!");
+					}
+				});
 			}
 		}
 
