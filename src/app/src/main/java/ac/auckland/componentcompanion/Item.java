@@ -24,7 +24,7 @@ public class Item {
 		this.price = price;
 		this.mount = mount;
 		this.value = value;
-		this.preview = "dataprovider/".concat(model.concat(".jpg"));
+		this.preview = "dataprovider/".concat(model.concat(".png"));
 	}
 
 	public int getId() {

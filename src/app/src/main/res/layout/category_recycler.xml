@@ -10,7 +10,7 @@
             android:id="@+id/image"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:backgroundTint="@android:color/transparent"
+            android:backgroundTint="#373737"
             android:background="@drawable/round_style"
             android:layout_marginTop="5dp"
 

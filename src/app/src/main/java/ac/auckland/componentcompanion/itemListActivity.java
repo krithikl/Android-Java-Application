@@ -34,6 +34,7 @@ public class ItemListActivity extends AppCompatActivity {
 			private Button priceText;
 
 
+
 			public ViewHolder(View itemView) {
 				super(itemView);
 				imageButton = itemView.findViewById(R.id.image);
@@ -62,8 +63,8 @@ public class ItemListActivity extends AppCompatActivity {
 			float value = items.get(position).getValue();
 			float price = items.get(position).getPrice();
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(ItemListActivity.this, imageName));
-			viewholder.makeText.setText(make);
-			viewholder.valueText.setText(Float.toString(value));
+			viewholder.makeText.setText("Make" + make);
+			viewholder.valueText.setText("Value" + Float.toString(value) + "");
 			viewholder.priceText.setText(Float.toString(price));
 
 		}
@@ -98,7 +99,7 @@ public class ItemListActivity extends AppCompatActivity {
 		recyclerView.setAdapter(adapter);
 
 
-		((TextView) findViewById(R.id.category_text)).setText(category);
+		((TextView) findViewById(R.id.category_text)).setText(category.concat("s"));
 
 
 

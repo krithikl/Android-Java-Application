@@ -45,7 +45,7 @@
                 android:textColor="@color/white"
                 android:textIsSelectable="false"/>
         <ScrollView
-                android:layout_width="365dp"
+                android:layout_width="400dp"
                 android:layout_height="73dp"
                 android:layout_weight="3">
 
@@ -54,7 +54,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    tools:listitem="@layout/top_picks_recycler"/>
+                    tools:listitem="@layout/top_picks_recycler"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
         </ScrollView>
 
         <Space
@@ -63,7 +65,7 @@
         <EditText
                 android:id="@+id/editTextTextPersonName2"
                 android:layout_width="wrap_content"
-                android:layout_height="75dp"
+                android:layout_height="48dp"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
