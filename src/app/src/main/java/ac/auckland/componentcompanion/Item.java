@@ -7,17 +7,20 @@ public class Item {
 	private String name; /* e.g. Resistor, Capacitor, Inductor */
 	private String make;
 	private String model;
+	private String mount;
 	private float price; /* in New Zealand Cenets (1/100 of a NZD) */
 	private float value; /* Value of component in ohms, micro farads etc. */
 	private String preview; /* URI to item image */
 
-	public Item(String name, String make, String model, float price, float value) {
+	public Item(String name, String make, String model, float price, String mount, float value) {
 		this.id = Item.nextID++;
 
 		this.name = name;
 		this.make = make;
 		this.model = model;
 		this.price = price;
+		this.mount = mount;
+		this.value = value;
 		this.preview = model.concat(".jpg") ;
 	}
 
