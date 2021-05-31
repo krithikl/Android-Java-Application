@@ -62,10 +62,11 @@ public class ItemListActivity extends AppCompatActivity {
 			String make = items.get(position).getMake();
 			float value = items.get(position).getValue();
 			float price = items.get(position).getPrice();
+			String unit = items.get(position).getUnit();
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(ItemListActivity.this, imageName));
-			viewholder.makeText.setText("Make" + make);
-			viewholder.valueText.setText("Value" + Float.toString(value) + "");
-			viewholder.priceText.setText(Float.toString(price));
+			viewholder.makeText.setText("Make: " + make);
+			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
+			viewholder.priceText.setText("Price: "+ Float.toString(price));
 
 		}
 

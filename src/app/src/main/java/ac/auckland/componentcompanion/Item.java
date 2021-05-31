@@ -14,8 +14,9 @@ public class Item {
 	private float price; /* in New Zealand Cenets (1/100 of a NZD) */
 	private float value; /* Value of component in ohms, micro farads etc. */
 	private String preview; /* URI to item image */
+	private String unit;
 
-	public Item(String name, String make, String model, float price, String mount, float value) {
+	public Item(String name, String make, String model, float price, String mount, float value, String unit) {
 		this.id = Item.nextID++;
 
 		this.name = name;
@@ -25,6 +26,7 @@ public class Item {
 		this.mount = mount;
 		this.value = value;
 		this.preview = "dataprovider/".concat(model.concat(".png"));
+		this.unit = unit;
 	}
 
 	public int getId() {
@@ -52,5 +54,7 @@ public class Item {
 	}
 
 	public float getValue() { return value; }
+
+	public String getUnit() {return unit; }
 }
 

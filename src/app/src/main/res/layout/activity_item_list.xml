@@ -27,6 +27,8 @@
                 android:clickable="false"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:selectable="false"
+                android:editable="false"
         />
         <ScrollView
                 android:layout_width="match_parent"

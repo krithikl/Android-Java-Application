@@ -71,11 +71,12 @@
                 android:backgroundTint="@color/white"
                 android:clickable="false"
                 android:editable="false"
+                android:textIsSelectable="false"
                 android:ems="10"
                 android:inputType="none"
                 android:text="Categories"
                 android:textColor="@color/white"
-                android:textIsSelectable="false"
+
         />
 
         <LinearLayout

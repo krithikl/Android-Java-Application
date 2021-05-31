@@ -13,15 +13,15 @@ public class DataLoader {
 		String[][] rawData = DataProvider.getData();
 
 		for (int i = 0; i < 10; ++i) {
-			this.items.add(new Item(rawData[i][0], rawData[i][1], rawData[i][2], Float.parseFloat(rawData[i][3]), rawData[i][4], Float.parseFloat(rawData[i][5])));
+			this.items.add(new Item(rawData[i][0], rawData[i][1], rawData[i][2], Float.parseFloat(rawData[i][3]), rawData[i][4], Float.parseFloat(rawData[i][5]), rawData[i][6]));
 			this.category0.addItem(this.items.get(this.items.size() - 1));
 		}
 		for (int i = 10; i < 20; ++i) {
-			this.items.add(new Item(rawData[i][0], rawData[i][1], rawData[i][2], Float.parseFloat(rawData[i][3]), rawData[i][4], Float.parseFloat(rawData[i][5])));
+			this.items.add(new Item(rawData[i][0], rawData[i][1], rawData[i][2], Float.parseFloat(rawData[i][3]), rawData[i][4], Float.parseFloat(rawData[i][5]), rawData[i][6]));
 			this.category1.addItem(this.items.get(this.items.size() - 1));
 		}
 		for (int i = 20; i < 30; ++i) {
-			this.items.add(new Item(rawData[i][0], rawData[i][1], rawData[i][2], Float.parseFloat(rawData[i][3]), rawData[i][4], Float.parseFloat(rawData[i][5])));
+			this.items.add(new Item(rawData[i][0], rawData[i][1], rawData[i][2], Float.parseFloat(rawData[i][3]), rawData[i][4], Float.parseFloat(rawData[i][5]), rawData[i][6]));
 			this.category2.addItem(this.items.get(this.items.size() - 1));
 		}
 	}
