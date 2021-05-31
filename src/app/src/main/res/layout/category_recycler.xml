@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-              android:orientation="vertical"
               android:padding="8dp"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
-    <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="78dp"
-                app:srcCompat="@drawable/inductor"
-                android:id="@+id/searchImage"
-                android:layout_weight="1"
-                android:scaleType="centerInside"
-                android:backgroundTint="@android:color/transparent"
-                android:background="@drawable/round_style"
-                android:layout_marginTop="5dp"
+              android:layout_height="wrap_content" android:id="@+id/catLayout">
+    <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="78dp"
+            app:srcCompat="@drawable/inductor"
+            android:id="@+id/searchImage"
+            android:layout_weight="1"
+            android:scaleType="centerInside"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@drawable/round_style"
+            android:layout_marginTop="5dp"
 
-        />
-
-        <Button
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:text="@string/searchItemText"
-                android:layout_weight="2"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:backgroundTint="@color/purple_200"
-                android:background="@drawable/round_style"
-                android:id="@+id/searchDetails"
-                android:textAlignment="textStart"
-                android:theme="@style/Theme.ComponentCompanion.Button"
-                android:textAllCaps="false"/>
-
-    </LinearLayout>
+    />
+    <Button
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
+            android:text="@string/searchItemText"
+            android:layout_weight="2"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/purple_200"
+            android:background="@drawable/round_style"
+            android:id="@+id/searchDetails"
+            android:textAlignment="textStart"
+            android:theme="@style/Theme.ComponentCompanion.Button"
+            android:textAllCaps="false"/>
 </LinearLayout>

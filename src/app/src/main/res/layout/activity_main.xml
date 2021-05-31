@@ -20,8 +20,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_style"
+                    android:queryHint="Search"
 
-            />
+                    android:id="@+id/searchBar"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
