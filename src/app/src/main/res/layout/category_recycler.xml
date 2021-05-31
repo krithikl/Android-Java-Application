@@ -30,7 +30,6 @@
                 android:background="@drawable/round_style"
                 android:id="@+id/make"
                 android:textAlignment="textStart"
-                android:theme="@style/Theme.ComponentCompanion.Button"
                 android:textAllCaps="false" android:textSize="12sp"/>
         <Button
                 android:layout_width="121dp"
