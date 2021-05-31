@@ -1,18 +1,20 @@
 package ac.auckland.componentcompanion;
 
-import androidx.annotation.NonNull;
+import android.content.Intent;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 	private String TAG = "ac.auckland.componentcompanion.MainActivity";
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 		/* Define the behaviour of each recycler view item */
 		private class ViewHolder extends RecyclerView.ViewHolder {
 			private ImageButton imageButton;
+
 			public ViewHolder(View itemView) {
 				super(itemView);
 				imageButton = itemView.findViewById(R.id.image);
@@ -52,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -72,7 +74,34 @@ public class MainActivity extends AppCompatActivity {
 
 		recyclerView.setLayoutManager(new LinearLayoutManager(this));
 		recyclerView.setAdapter(adapter);
+
+		Button cat0Btn = findViewById(R.id.cat0Btn);
+
+		cat0Btn.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent catActivity = new Intent(MainActivity.this, itemListActivity.class);
+
+				startActivity(catActivity);
+
+			}
+		});
+
+		SearchView searchBar = findViewById(R.id.searchBar);
+
+		searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+			@Override
+			public boolean onQueryTextSubmit(String s) {
+				return false;
+			}
+
+			@Override
+			public boolean onQueryTextChange(String s) {
+
+				// Filter results in here with adapter
+				return false;
+			}
+		});
+
+
 	}
-
-
 }
