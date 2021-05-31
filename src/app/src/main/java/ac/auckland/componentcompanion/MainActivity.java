@@ -83,13 +83,30 @@ public class MainActivity extends AppCompatActivity {
 		recyclerView.setAdapter(adapter);
 
 		Button cat0Btn = findViewById(R.id.cat0Btn);
+		Button cat1Btn = findViewById(R.id.cat1Btn);
+		Button cat2Btn = findViewById(R.id.cat2Btn);
 
 		cat0Btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent catActivity = new Intent(MainActivity.this, itemListActivity.class);
+				Intent activityIntent = new Intent(MainActivity.this, itemListActivity.class);
+				activityIntent.putExtra("CATEGORY", "Resistor");
+				startActivity(activityIntent);
+			}
+		});
 
-				startActivity(catActivity);
+		cat1Btn.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent activityIntent = new Intent(MainActivity.this, itemListActivity.class);
+				activityIntent.putExtra("CATEGORY", "Capacitor");
+				startActivity(activityIntent);
+			}
+		});
 
+		cat2Btn.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
+				Intent activityIntent = new Intent(MainActivity.this, itemListActivity.class);
+				activityIntent.putExtra("CATEGORY", "Inductor");
+				startActivity(activityIntent);
 			}
 		});
 

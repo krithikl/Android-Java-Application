@@ -22,7 +22,7 @@
                     android:inputType="textPersonName"
                     android:text="Category"
                     android:ems="10"
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/category_text"
                     android:textAlignment="center"
                     android:layout_marginTop="5dp"
                     android:backgroundTint="@color/white"
