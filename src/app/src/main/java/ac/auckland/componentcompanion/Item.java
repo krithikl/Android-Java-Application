@@ -8,16 +8,17 @@ public class Item {
 	private String make;
 	private String model;
 	private float price; /* in New Zealand Cenets (1/100 of a NZD) */
+	private float value; /* Value of component in ohms, micro farads etc. */
 	private String preview; /* URI to item image */
 
-	public Item(String name, String make, String model, float price, String preview) {
+	public Item(String name, String make, String model, float price, float value) {
 		this.id = Item.nextID++;
 
 		this.name = name;
 		this.make = make;
 		this.model = model;
 		this.price = price;
-		this.preview = preview;
+		this.preview = model.concat(".jpg") ;
 	}
 
 	public int getId() {

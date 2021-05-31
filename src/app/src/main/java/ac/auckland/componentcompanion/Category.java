@@ -20,8 +20,8 @@ public class Category {
 		this.items.add(i);
 	}
 
-	public void addItem(String name, String make, String model, float price, String preview) {
-		this.addItem(new Item(name, make, model, price, preview));
+	public void addItem(String name, String make, String model, float price, float value) {
+		this.addItem(new Item(name, make, model, price, value));
 	}
 
 	public String getCategoryName() {
