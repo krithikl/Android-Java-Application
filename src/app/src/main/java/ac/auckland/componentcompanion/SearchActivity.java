@@ -19,10 +19,12 @@ import java.util.Collection;
 public class SearchActivity extends AppCompatActivity {
     private DataLoader dataloader = new DataLoader();
 
+
     private String TAG = "ac.auckland.componentcompanion.MainActivity";
 
-    private class searchAdapter extends RecyclerView.Adapter<SearchActivity.searchAdapter.ViewHolder> {
-        public ArrayList<Item> items = null;
+    private class searchAdapter extends RecyclerView.Adapter<SearchActivity.searchAdapter.ViewHolder> implements Filterable{
+        public ArrayList<Item> itemList = null;
+        public ArrayList<Item> itemListAll = null;
 
         /* Define the behaviour of each recycler view item */
         private class ViewHolder extends RecyclerView.ViewHolder {
@@ -56,66 +58,19 @@ public class SearchActivity extends AppCompatActivity {
 
         /* Replace content of a view */
         public void onBindViewHolder(SearchActivity.searchAdapter.ViewHolder viewholder, final int position) {
-            String imageName = items.get(position).getPreview();
-            String make = items.get(position).getMake();
-            float value = items.get(position).getValue();
-            float price = items.get(position).getPrice();
-            String unit = items.get(position).getUnit();
+            String imageName = itemList.get(position).getPreview();
+            String make = itemList.get(position).getMake();
+            float value = itemList.get(position).getValue();
+            float price = itemList.get(position).getPrice();
+            String unit = itemList.get(position).getUnit();
             viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(SearchActivity.this, imageName));
             viewholder.makeText.setText("Make: " + make);
             viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
             viewholder.priceText.setText("Price: "+ Float.toString(price));
 
+
         }
 
-        public int getItemCount() {
-            return items.size();
-        }
-
-        /* Constructor initialises the data we are going to display */
-        public searchAdapter(ArrayList<Item> items) {
-            this.items = items;
-        }
-    }
-
-    private class RecyclerAdapter extends RecyclerView.Adapter<SearchActivity.RecyclerAdapter.ViewHolder> implements Filterable {
-        public ArrayList<Item> itemList = null;
-        public ArrayList<Item> itemListAll = null;
-
-        /* Constructor initialises the data we are going to display */
-        private RecyclerAdapter(ArrayList<Item> itemList) {
-            DataLoader dloader = new DataLoader();
-            this.itemList = itemList;
-            this.itemListAll = new ArrayList<>(dloader.getItems());
-        }
-
-        /* Define the behaviour of each recycler view item */
-        private class ViewHolder extends RecyclerView.ViewHolder {
-            private ImageButton imageButton;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-                imageButton = itemView.findViewById(R.id.image);
-            }
-        }
-
-        /* Called by ViewManager every time a new view is created */
-        public SearchActivity.RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_recycler, parent, false);
-            return new SearchActivity.RecyclerAdapter.ViewHolder(view);
-        }
-
-        /* Replace content of a view */
-        public void onBindViewHolder(SearchActivity.RecyclerAdapter.ViewHolder viewholder, final int position) {
-            String imageName = itemList.get(position).getPreview();
-            viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(SearchActivity.this, imageName));
-        }
-
-        public int getItemCount() {
-            return itemList.size();
-        }
-
-        @Override
         public Filter getFilter() {
 
             return myFilter;
@@ -152,6 +107,14 @@ public class SearchActivity extends AppCompatActivity {
             }
         };
 
+        public int getItemCount() {
+            return itemList.size();
+        }
+
+        /* Constructor initialises the data we are going to display */
+        public searchAdapter(ArrayList<Item> items) {
+            this.itemList = items;
+        }
     }
 
     @Override
@@ -196,11 +159,11 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String inputText) {
-                SearchActivity.RecyclerAdapter recyclerAdapter = new SearchActivity.RecyclerAdapter(dataloader.items);
-                recyclerAdapter.getFilter().filter(inputText);
+                SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
+                searchAdapter.getFilter().filter(inputText);
                 RecyclerView recyclerView = findViewById(R.id.search_recycle);
 
-                recyclerView.setAdapter(recyclerAdapter);
+                recyclerView.setAdapter(searchAdapter);
                 return false;
             }
         });
