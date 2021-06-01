@@ -151,6 +151,11 @@ public class SearchActivity extends AppCompatActivity {
 			}
 		});
 
+		/* Populate the search list with all items by default */
+		SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
+		searchAdapter.getFilter().filter("");
+		recyclerView.setAdapter(searchAdapter);
+
 		// Back button remap
 		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
 			@Override
