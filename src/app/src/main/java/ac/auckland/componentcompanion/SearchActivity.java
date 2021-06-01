@@ -1,11 +1,13 @@
 package ac.auckland.componentcompanion;
 
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
@@ -155,6 +157,11 @@ public class SearchActivity extends AppCompatActivity {
 		SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
 		searchAdapter.getFilter().filter("");
 		recyclerView.setAdapter(searchAdapter);
+
+		/* Make the keyboard visible and give focus to the search input */
+		searchBar.requestFocus();
+		/* Show the keyboard */
+		((InputMethodManager) (getSystemService(Context.INPUT_METHOD_SERVICE))).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
 
 		// Back button remap
 		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
