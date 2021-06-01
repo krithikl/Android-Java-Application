@@ -5,15 +5,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.*;
 
-import android.widget.LinearLayout;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,12 +48,14 @@ public class ItemListActivity extends AppCompatActivity {
 						Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 						setContentView(R.layout.activity_item_details);
 
+
 					}
 				});
 
 				imageButton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
 						Log.d(TAG, "Top Pick Item Clicked (Image Button)!");
+						setContentView(R.layout.activity_item_details);
 					}
 				});
 			}

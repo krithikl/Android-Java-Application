@@ -1,5 +1,7 @@
 package ac.auckland.componentcompanion;
 
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

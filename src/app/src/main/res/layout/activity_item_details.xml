@@ -58,11 +58,11 @@
                 />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </HorizontalScrollView>
-        <EditText
+        <TextView
                 android:layout_width="213dp"
                 android:layout_height="96dp"
-                android:inputType="textPersonName"
                 android:text="Price per Unit: "
+                android:inputType="none"
                 android:ems="10"
                 android:id="@+id/unitPrice"
                 style="@style/Theme.ComponentCompanion.CatButton"
@@ -71,13 +71,16 @@
                 app:layout_constraintBottom_toTopOf="@+id/itemDetails"
                 app:layout_constraintHorizontal_bias="0.781"
                 app:layout_constraintVertical_bias="0.525"
-                android:textSize="18sp" app:layout_constraintTop_toBottomOf="@+id/imageGallery"/>
+                android:textSize="18sp"
+                android:clickable="false"
+                android:editable="false"
+                android:textIsSelectable="false"
+                app:layout_constraintTop_toBottomOf="@+id/imageGallery"/>
         <ImageView
                 android:id="@+id/image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/search_icon"
                 android:background="@drawable/top_pick_style"
                 tools:srcCompat="@tools:sample/avatars[0]"
                 android:backgroundTint="#1b1b1b"
@@ -92,10 +95,10 @@
                 app:layout_constraintBottom_toTopOf="@+id/itemDetails"
                 app:layout_constraintHorizontal_bias="0.392"
                 android:layout_marginBottom="52dp"/>
-        <EditText
+        <TextView
                 android:layout_width="match_parent"
                 android:layout_height="325dp"
-                android:inputType="textMultiLine"
+                android:inputType="none"
                 android:gravity="start|top"
                 android:ems="10"
                 style="@style/Theme.ComponentCompanion.CatButton"
@@ -108,6 +111,7 @@
                 app:layout_constraintVertical_bias="1.0"
                 android:clickable="false"
                 android:editable="false"
-                />
+                android:textIsSelectable="false"
+        />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
