@@ -25,21 +25,21 @@
                     android:layout_width="402dp"
                     android:layout_height="wrap_content"
                     tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
-                    android:id="@+id/imageView5"
+                    android:id="@+id/image1"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constrainedWidth="true"
                     android:scaleType="fitXY"
 
-                    app:layout_constraintEnd_toStartOf="@+id/imageView6" tools:layout_conversion_absoluteHeight="324dp"
+                    app:layout_constraintEnd_toStartOf="@+id/image2" tools:layout_conversion_absoluteHeight="324dp"
 
                     />
             <ImageView
                     android:layout_width="402dp"
                     android:layout_height="wrap_content"
                     tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
-                    android:id="@+id/imageView6"
-                    app:layout_constraintStart_toEndOf="@id/imageView5"
+                    android:id="@+id/image2"
+                    app:layout_constraintStart_toEndOf="@id/image1"
                     app:layout_constraintTop_toTopOf="parent"
                     android:scaleType="fitXY"
                     />
@@ -47,15 +47,15 @@
                     android:layout_width="402dp"
                     android:layout_height="wrap_content"
                     tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
-                    android:id="@+id/imageView7"
-                    app:layout_constraintStart_toEndOf="@id/imageView6"
+                    android:id="@+id/image3"
+                    app:layout_constraintStart_toEndOf="@id/image2"
                     app:layout_constraintTop_toTopOf="parent"
                     android:scaleType="fitXY"
                    />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
     <ImageView
-            android:id="@+id/imageProfile"
+            android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -68,12 +68,14 @@
 
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
+            android:padding="10dp"
 
 
     />
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/linearLayout3">
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout3">
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="325dp"
@@ -81,10 +83,27 @@
                 android:gravity="start|top"
                 android:ems="10"
                 style="@style/Theme.ComponentCompanion.CatButton"
-                android:id="@+id/editTextTextMultiLine"
+                android:id="@+id/itemDetails"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:text="@tools:sample/lorem/random"/>
+                android:text="" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="1.0" tools:text="@tools:sample/lorem/random"/>
+        <EditText
+                android:layout_width="213dp"
+                android:layout_height="96dp"
+                android:inputType="textPersonName"
+                android:text="Price per Unit: "
+                android:ems="10"
+                android:id="@+id/unitPrice"
+                style="@style/Theme.ComponentCompanion.CatButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/itemDetails"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.921"
+                app:layout_constraintVertical_bias="0.525"
+                android:textSize="18sp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
