@@ -49,6 +49,8 @@ public class ItemListActivity extends AppCompatActivity {
 					@Override
 					public void onClick(View v) {
 						Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+						setContentView(R.layout.activity_item_details);
+
 					}
 				});
 
