@@ -14,7 +14,17 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">#111111</item>
         <!-- Customize your theme here. -->
+
+        <!-- Activity Transistions -->
+        <!-- specify enter and exit transitions -->
+        <item name="android:windowEnterTransition">@android:transition/slide_left</item>
+        <item name="android:windowExitTransition">@android:transition/slide_right</item>
+        <!-- specify shared element transitions -->
+        <item name="android:windowSharedElementEnterTransition">@transition/change_image_transform</item>
+        <item name="android:windowSharedElementExitTransition">@transition/change_image_transform</item>
+
     </style>
+
     <style name="Theme.ComponentCompanion.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
