@@ -26,7 +26,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="@drawable/round_style"
                     android:iconifiedByDefault="false"
                     android:queryHint="Search"/>
         </LinearLayout>
@@ -80,51 +79,29 @@
         />
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_weight="2"
-                android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
 
             <Button
                     android:id="@+id/cat0Btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="82dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
                     android:text="@string/category_one"
-                    android:textSize="12sp"
-                    android:textColor="#ffcc80"
-                    android:background="@drawable/round_style"
-
+                    style="@style/Theme.ComponentCompanion.CatButton"
             />
 
 
             <Button
                     android:id="@+id/cat1Btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="82dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/round_style"
                     android:text="@string/category_two"
-                    android:textSize="12sp"
-                    android:textColor="#ffcc80"
-                    android:layout_marginBottom="10dp"/>
+                    style="@style/Theme.ComponentCompanion.CatButton"
+            />
 
             <Button
                     android:id="@+id/cat2Btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="82dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/round_style"
                     android:text="@string/category_three"
-                    android:textColor="#ffcc80"
-                    android:textSize="12sp" android:layout_marginBottom="10dp"/>
+                    style="@style/Theme.ComponentCompanion.CatButton"
+            />
 
         </LinearLayout>
 
