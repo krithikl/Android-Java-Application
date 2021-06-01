@@ -5,21 +5,20 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.*;
 
-import android.widget.SearchView;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 	private String TAG = "ac.auckland.componentcompanion.MainActivity";
-
 
 	/* Define the behaviour of the recycler view */
 	private class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.ViewHolder> {
@@ -61,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
 		public TopPicksAdapter(ArrayList<Item> items) {
 			this.items = items;
 		}
-
-
 	}
 
 	@Override
@@ -119,50 +116,17 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-
-//			public void onClick(View view) {
-//				Intent activityIntent = new Intent(MainActivity.this, SearchActivity.class);
-//				startActivity(activityIntent);
-//			}
-//		});
-
-
-		searchButton.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-			@Override
-			public boolean onQueryTextSubmit(String query) {
+		searchButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, SearchActivity.class);
 				startActivity(activityIntent);
-				return false;
-			}
-
-			@Override
-			public boolean onQueryTextChange(String newText) {
-
-				return false;
+				overridePendingTransition(0,0);
 			}
 		});
 
+
+
+
 	}
 
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		getMenuInflater().inflate(R.menu.search_menu,menu);
-//
-//		MenuItem item = menu.findItem(R.id.searchBar);
-//		SearchView searchView = (SearchView) item.getActionView();
-//		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//
-//			@Override
-//			public boolean onQueryTextSubmit(String query) {
-//				return false;
-//			}
-//
-//			@Override
-//			public boolean onQueryTextChange(String newText) {
-//				return false;
-//			}
-//		});
-//
-//
-//		return super.onCreateOptionsMenu(menu);
-//	}
 }

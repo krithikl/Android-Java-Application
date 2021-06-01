@@ -12,30 +12,14 @@
             android:layout_height="match_parent"
             android:background="#212121"
             android:id="@+id/linearLayout">
-        <LinearLayout
-                android:orientation="horizontal"
+        <SearchView
+                android:id="@+id/searchBar"
                 android:layout_width="match_parent"
-                android:layout_height="106dp" android:layout_weight="3">
-
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
-                    android:inputType="textPersonName"
-                    android:text="Search results for &quot;xyz&quot;"
-                    android:ems="10"
-                    android:id="@+id/search_text"
-                    android:textAlignment="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/white"
-                    android:textColor="@color/white"
-                    android:clickable="false"
-                    android:editable="false"
-                    android:textIsSelectable="false"
-            />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search"
+                android:background="@drawable/search_bar_style"/>
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_weight="3">
@@ -49,7 +33,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             tools:listitem="@layout/search_recycler"
-                            tools:itemCount="20" android:id="@+id/search_recycle"/>
+                            android:id="@+id/search_recycle"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
