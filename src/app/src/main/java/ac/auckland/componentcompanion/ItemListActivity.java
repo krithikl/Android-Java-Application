@@ -29,9 +29,9 @@ public class ItemListActivity extends AppCompatActivity {
 		/* Define the behaviour of each recycler view item */
 		private class ViewHolder extends RecyclerView.ViewHolder {
 			private ImageButton imageButton;
-			private Button makeText;
-			private Button valueText;
-			private Button priceText;
+			private TextView makeText;
+			private TextView valueText;
+			private TextView priceText;
 
 
 

@@ -9,9 +9,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.ComponentCompanion">
-        <activity android:name="ac.auckland.componentcompanion.itemDetailsActivity">
+        <activity android:name="ac.auckland.componentcompanion.itemDetailsActivity" android:theme="@style/ActivityTransition">
         </activity>
-        <activity android:name="ac.auckland.componentcompanion.ItemListActivity">
+        <activity android:name="ac.auckland.componentcompanion.ItemListActivity" android:theme="@style/ActivityTransition">
         </activity>
         <activity
                 android:name="ac.auckland.componentcompanion.SearchActivity"
