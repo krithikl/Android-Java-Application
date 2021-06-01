@@ -71,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
 		ArrayList<Item> topPicks = new ArrayList<Item>(6);
 
 		RecyclerView recyclerView = findViewById(R.id.top_picks);
-
-
 		TopPicksAdapter adapter = new TopPicksAdapter(topPicks);
 
 		topPicks.add(dloader.getItem(1));
@@ -82,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
 		topPicks.add(dloader.getItem(24));
 		topPicks.add(dloader.getItem(28));
 
-
-
 		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 		recyclerView.setAdapter(adapter);
+		/* Remember the layout is reversed */
+		recyclerView.scrollToPosition(topPicks.size() - 1);
 
 		Button cat0Btn = findViewById(R.id.cat0Btn);
 		Button cat1Btn = findViewById(R.id.cat1Btn);
