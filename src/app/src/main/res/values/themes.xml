@@ -36,6 +36,7 @@
         <item name="backgroundTint">#1b1b1b</item>
         <item name="cornerRadius">12dp</item>
         <item name="strokeColor">#ffcc80</item>
+        <item name="rippleColor">#ffcc80</item>
         <item name="strokeWidth">2dp</item>
 
         <item name="android:layout_width">0dp</item>
@@ -46,6 +47,12 @@
         <item name="android:paddingTop">35dp</item>
         <item name="android:paddingBottom">35dp</item>
         <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="Theme.ComponentCompanion.TopPicks">
+        <item name="color">#373737</item>
+        <item name="backgroundTint">#373737</item>
+        <item name="cornerRadius">12dp</item>
     </style>
 
     <style name="Theme.ComponentCompanion.Button" parent="@style/Widget.MaterialComponents.Button">

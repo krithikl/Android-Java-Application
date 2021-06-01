@@ -105,7 +105,7 @@ public class SearchActivity extends AppCompatActivity {
 			@Override
 			protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
 				itemList.clear();
-				itemList.addAll((Collection<? extends Item>) filterResults.values);
+				itemList.addAll((ArrayList<Item>) filterResults.values);
 				notifyDataSetChanged();
 			}
 		};
@@ -150,6 +150,11 @@ public class SearchActivity extends AppCompatActivity {
 				return false;
 			}
 		});
+
+		/* Populate the search list with all items by default */
+		SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
+		searchAdapter.getFilter().filter("");
+		recyclerView.setAdapter(searchAdapter);
 
 		// Back button remap
 		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
