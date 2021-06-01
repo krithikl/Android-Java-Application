@@ -36,6 +36,7 @@
         <item name="backgroundTint">#1b1b1b</item>
         <item name="cornerRadius">12dp</item>
         <item name="strokeColor">#ffcc80</item>
+        <item name="rippleColor">#ffcc80</item>
         <item name="strokeWidth">2dp</item>
 
         <item name="android:layout_width">0dp</item>
