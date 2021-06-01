@@ -27,7 +27,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/purple_200"
+                android:background="@drawable/top_pick_style"
                 android:id="@+id/make"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
@@ -39,10 +39,9 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/purple_200"
                 android:id="@+id/value"
                 android:textAlignment="textStart"
-                android:theme="@style/Theme.ComponentCompanion.Button"
+                android:background="@drawable/top_pick_style"
                 android:textAllCaps="false"
                 android:textSize="12sp"/>
         <Button
@@ -52,10 +51,9 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:backgroundTint="@color/purple_200"
+                android:background="@drawable/top_pick_style"
                 android:id="@+id/price"
                 android:textAlignment="textStart"
-                android:theme="@style/Theme.ComponentCompanion.Button"
                 android:textAllCaps="false"
                 android:textSize="12sp"/>
     </LinearLayout>

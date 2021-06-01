@@ -27,7 +27,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:iconifiedByDefault="false"
-                    android:queryHint="Search"/>
+                    android:queryHint="Search"
+                    android:background="@drawable/search_bar_style"/>
         </LinearLayout>
 
         <EditText

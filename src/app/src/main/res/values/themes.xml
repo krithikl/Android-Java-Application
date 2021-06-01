@@ -40,6 +40,8 @@
         <item name="android:layout_margin">8dp</item>
     </style>
 
+
+
     <style name="Theme.ComponentCompanion.Button" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:textColor">#ffcc80</item>
         <item name="android:backgroundTint">#1b1b1b</item>
