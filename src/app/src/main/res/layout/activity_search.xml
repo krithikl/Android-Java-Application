@@ -49,7 +49,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             tools:listitem="@layout/search_recycler"
-                            tools:itemCount="20"/>
+                            tools:itemCount="20" android:id="@+id/search_recycle"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

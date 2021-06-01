@@ -2,23 +2,23 @@ package ac.auckland.componentcompanion;
 
 import android.content.Intent;
 import android.util.Log;
-import android.view.View;
+import android.view.*;
 
+import android.widget.SearchView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.SearchView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 	private String TAG = "ac.auckland.componentcompanion.MainActivity";
+
 
 	/* Define the behaviour of the recycler view */
 	private class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.ViewHolder> {
@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
 		public TopPicksAdapter(ArrayList<Item> items) {
 			this.items = items;
 		}
+
+
 	}
 
 	@Override
@@ -69,7 +71,10 @@ public class MainActivity extends AppCompatActivity {
 
 		DataLoader dloader = new DataLoader();
 		ArrayList<Item> topPicks = new ArrayList<Item>(6);
+
 		RecyclerView recyclerView = findViewById(R.id.top_picks);
+
+
 		TopPicksAdapter adapter = new TopPicksAdapter(topPicks);
 
 		topPicks.add(dloader.getItem(1));
@@ -79,12 +84,15 @@ public class MainActivity extends AppCompatActivity {
 		topPicks.add(dloader.getItem(24));
 		topPicks.add(dloader.getItem(28));
 
+
+
 		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 		recyclerView.setAdapter(adapter);
 
 		Button cat0Btn = findViewById(R.id.cat0Btn);
 		Button cat1Btn = findViewById(R.id.cat1Btn);
 		Button cat2Btn = findViewById(R.id.cat2Btn);
+		SearchView searchButton = findViewById(R.id.searchBar);
 
 		cat0Btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
@@ -110,20 +118,50 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-		SearchView searchBar = findViewById(R.id.searchBar);
 
-		searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//			public void onClick(View view) {
+//				Intent activityIntent = new Intent(MainActivity.this, SearchActivity.class);
+//				startActivity(activityIntent);
+//			}
+//		});
+
+
+		searchButton.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
-			public boolean onQueryTextSubmit(String s) {
+			public boolean onQueryTextSubmit(String query) {
+				Intent activityIntent = new Intent(MainActivity.this, SearchActivity.class);
+				startActivity(activityIntent);
 				return false;
 			}
 
 			@Override
-			public boolean onQueryTextChange(String s) {
+			public boolean onQueryTextChange(String newText) {
 
-				// Filter results in here with adapter
 				return false;
 			}
 		});
+
 	}
+
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		getMenuInflater().inflate(R.menu.search_menu,menu);
+//
+//		MenuItem item = menu.findItem(R.id.searchBar);
+//		SearchView searchView = (SearchView) item.getActionView();
+//		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//
+//			@Override
+//			public boolean onQueryTextSubmit(String query) {
+//				return false;
+//			}
+//
+//			@Override
+//			public boolean onQueryTextChange(String newText) {
+//				return false;
+//			}
+//		});
+//
+//
+//		return super.onCreateOptionsMenu(menu);
+//	}
 }

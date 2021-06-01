@@ -92,6 +92,8 @@ public class ItemListActivity extends AppCompatActivity {
 		DataLoader dloader = new DataLoader();
 		Category categoryItems = dloader.getCategory(category);
 		RecyclerView recyclerView = findViewById(R.id.category_items);
+
+
 		ItemListActivity.categoryAdapter adapter = new ItemListActivity.categoryAdapter(categoryItems.getItems());
 
 
@@ -101,6 +103,8 @@ public class ItemListActivity extends AppCompatActivity {
 
 
 		((TextView) findViewById(R.id.search_text)).setText(category.concat("s"));
+
+
 
 
 
