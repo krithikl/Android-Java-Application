@@ -4,7 +4,7 @@
               android:padding="8dp"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/recycleLayout">
+              android:id="@+id/category_layout">
     <ImageButton
             android:layout_width="286dp"
             android:layout_height="114dp"

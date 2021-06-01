@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import android.widget.LinearLayout;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 public class ItemListActivity extends AppCompatActivity {
 
-	private String TAG = "ac.auckland.componentcompanion.MainActivity";
+	private String TAG = "ac.auckland.componentcompanion.ItemListActivity";
 
 	/* Define the behaviour of the recycler view */
 	private class categoryAdapter extends RecyclerView.Adapter<categoryAdapter.ViewHolder> {
@@ -28,6 +29,7 @@ public class ItemListActivity extends AppCompatActivity {
 
 		/* Define the behaviour of each recycler view item */
 		private class ViewHolder extends RecyclerView.ViewHolder {
+			private LinearLayout layout;
 			private ImageButton imageButton;
 			private TextView makeText;
 			private TextView valueText;
@@ -37,14 +39,22 @@ public class ItemListActivity extends AppCompatActivity {
 
 			public ViewHolder(View itemView) {
 				super(itemView);
+				layout = itemView.findViewById(R.id.category_layout);
 				imageButton = itemView.findViewById(R.id.image);
 				makeText  = itemView.findViewById(R.id.make);
 				valueText  = itemView.findViewById(R.id.value);
 				priceText  = itemView.findViewById(R.id.price);
 
+				layout.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					}
+				});
+
 				imageButton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
-						Log.d(TAG, "Top Pick Item Clicked!");
+						Log.d(TAG, "Top Pick Item Clicked (Image Button)!");
 					}
 				});
 			}
