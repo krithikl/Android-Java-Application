@@ -103,22 +103,6 @@ public class ItemListActivity extends AppCompatActivity {
 
 
 		((TextView) findViewById(R.id.search_text)).setText(category.concat("s"));
-
-
-
-
-
-		// Back button remap, goes to previous activity
-		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
-			@Override
-			public void handleOnBackPressed() {
-				// set an exit transition
-				finish();
-				overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
-			}
-		};
-		getOnBackPressedDispatcher().addCallback(this, backButtonCall);
-
 	}
 
 }

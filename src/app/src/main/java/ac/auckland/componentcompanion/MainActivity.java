@@ -1,5 +1,6 @@
 package ac.auckland.componentcompanion;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.util.Log;
 import android.view.*;
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Resistor");
-				startActivity(activityIntent);
+				startActivity(activityIntent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
 			}
 		});
 
