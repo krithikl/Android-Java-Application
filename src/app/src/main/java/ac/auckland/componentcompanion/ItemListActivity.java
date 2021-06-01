@@ -92,15 +92,11 @@ public class ItemListActivity extends AppCompatActivity {
 		DataLoader dloader = new DataLoader();
 		Category categoryItems = dloader.getCategory(category);
 		RecyclerView recyclerView = findViewById(R.id.category_items);
-
-
 		ItemListActivity.categoryAdapter adapter = new ItemListActivity.categoryAdapter(categoryItems.getItems());
-
-
-
 		recyclerView.setLayoutManager(new LinearLayoutManager(ItemListActivity.this, LinearLayoutManager.VERTICAL, true));
 		recyclerView.setAdapter(adapter);
-
+		/* Remember order is reversed above */
+		recyclerView.scrollToPosition(categoryItems.getLength() - 1);
 
 		((TextView) findViewById(R.id.search_text)).setText(category.concat("s"));
 	}

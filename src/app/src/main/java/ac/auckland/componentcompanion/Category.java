@@ -30,7 +30,7 @@ public class Category {
 		return this.name;
 	}
 
-	public int getCategoryLength() {
+	public int getLength() {
 		return this.items.size();
 	}
 
