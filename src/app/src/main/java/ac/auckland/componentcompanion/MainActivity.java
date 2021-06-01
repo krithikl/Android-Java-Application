@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 		Button cat0Btn = findViewById(R.id.cat0Btn);
 		Button cat1Btn = findViewById(R.id.cat1Btn);
 		Button cat2Btn = findViewById(R.id.cat2Btn);
-		SearchView searchButton = findViewById(R.id.searchBar);
+		Button searchButton = findViewById(R.id.searchBar);
 
 		cat0Btn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
@@ -121,10 +121,6 @@ public class MainActivity extends AppCompatActivity {
 				overridePendingTransition(0,0);
 			}
 		});
-
-
-
-
 	}
 
 }
