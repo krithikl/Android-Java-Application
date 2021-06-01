@@ -105,7 +105,7 @@ public class SearchActivity extends AppCompatActivity {
 			@Override
 			protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
 				itemList.clear();
-				itemList.addAll((Collection<? extends Item>) filterResults.values);
+				itemList.addAll((ArrayList<Item>) filterResults.values);
 				notifyDataSetChanged();
 			}
 		};
