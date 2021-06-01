@@ -100,7 +100,7 @@ public class ItemListActivity extends AppCompatActivity {
 		recyclerView.setAdapter(adapter);
 
 
-		((TextView) findViewById(R.id.category_text)).setText(category.concat("s"));
+		((TextView) findViewById(R.id.search_text)).setText(category.concat("s"));
 
 
 
