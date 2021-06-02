@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Capacitor");
+				startActivity(activityIntent);
+				overridePendingTransition(R.anim.push_up_in, 0);
 
 
 			}
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Inductor");
 				startActivity(activityIntent);
-				overridePendingTransition(android.R.anim.slide_in_left, 0);
+				overridePendingTransition(R.anim.slide_in_right, 0);
 			}
 		});
 
