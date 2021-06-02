@@ -12,10 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 	private String TAG = "ac.auckland.componentcompanion.MainActivity";
@@ -49,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 		/* Replace content of a view */
 		public void onBindViewHolder(ViewHolder viewholder, final int position) {
 			String imageName = items.get(position).getPreview();
-			viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(MainActivity.this, imageName));
+			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(MainActivity.this, imageName));
 		}
 
 		public int getItemCount() {

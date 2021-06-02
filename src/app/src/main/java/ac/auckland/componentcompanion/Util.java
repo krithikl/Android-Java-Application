@@ -9,7 +9,7 @@ import java.io.InputStream;
 public class Util {
 	private static final String TAG = "componentcompanion.util";
 
-	public static Drawable drawableFromAssest(Context context, String path) {
+	public static Drawable drawableFromAsset(Context context, String path) {
 		try {
 			InputStream istream = context.getAssets().open(path);
 			return Drawable.createFromStream(istream, null);

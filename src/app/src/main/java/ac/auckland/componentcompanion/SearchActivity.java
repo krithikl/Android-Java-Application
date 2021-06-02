@@ -1,10 +1,8 @@
 package ac.auckland.componentcompanion;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -16,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class SearchActivity extends AppCompatActivity {
 	private DataLoader dataloader = new DataLoader();
@@ -65,7 +62,7 @@ public class SearchActivity extends AppCompatActivity {
 			float price = itemList.get(position).getPrice();
 			String unit = itemList.get(position).getUnit();
 
-			viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(SearchActivity.this, imageName));
+			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(SearchActivity.this, imageName));
 			viewholder.makeText.setText("Make: " + make);
 			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
 			viewholder.priceText.setText("Price: " + Float.toString(price));

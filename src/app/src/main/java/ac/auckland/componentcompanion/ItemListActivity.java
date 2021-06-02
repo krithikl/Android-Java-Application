@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
-import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -17,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ItemListActivity extends AppCompatActivity {
+
 
 	private String TAG = "ac.auckland.componentcompanion.ItemListActivity";
 
@@ -42,22 +42,7 @@ public class ItemListActivity extends AppCompatActivity {
 				valueText  = itemView.findViewById(R.id.value);
 				priceText  = itemView.findViewById(R.id.price);
 
-				layout.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						Log.d(TAG, "Top Pick Item Clicked (Layout)!");
-						setContentView(R.layout.activity_item_details);
 
-
-					}
-				});
-
-				imageButton.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
-						Log.d(TAG, "Top Pick Item Clicked (Image Button)!");
-						setContentView(R.layout.activity_item_details);
-					}
-				});
 			}
 		}
 
@@ -69,15 +54,40 @@ public class ItemListActivity extends AppCompatActivity {
 
 		/* Replace content of a view */
 		public void onBindViewHolder(ItemListActivity.categoryAdapter.ViewHolder viewholder, final int position) {
+
 			String imageName = items.get(position).getPreview();
 			String make = items.get(position).getMake();
 			float value = items.get(position).getValue();
 			float price = items.get(position).getPrice();
 			String unit = items.get(position).getUnit();
-			viewholder.imageButton.setImageDrawable(Util.drawableFromAssest(ItemListActivity.this, imageName));
+			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(ItemListActivity.this, imageName));
 			viewholder.makeText.setText("Make: " + make);
 			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
 			viewholder.priceText.setText("Price: "+ Float.toString(price));
+
+			viewholder.layout.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Intent mainIntent = new Intent(ItemListActivity.this, itemDetailsActivity.class);
+					mainIntent.putExtra("itemMake", make);
+					mainIntent.putExtra("itemValue", Float.toString(value));
+					mainIntent.putExtra("itemPrice", Float.toString(price));
+					mainIntent.putExtra("itemUnit", unit);
+					mainIntent.putExtra("imageUrl", imageName);
+
+
+					ItemListActivity.this.startActivity(mainIntent);
+
+
+				}
+			});
+
+			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					Log.d(TAG, "Top Pick Item Clicked (Image Button)!");
+				}
+			});
 
 		}
 
