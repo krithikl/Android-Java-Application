@@ -17,7 +17,9 @@ public class Item {
 	private String unit;
 
 	public Item(String name, String make, String model, float price, String mount, float value, String unit) {
-		this.id = Item.nextID++;
+		/* We have 30 max items, but the DataLoader might be called multiple times */
+		/* Instead of setting the nextID back to zero, lets just mod it with 30 */
+		this.id = Item.nextID++ % 30;
 
 		this.name = name;
 		this.make = make;
