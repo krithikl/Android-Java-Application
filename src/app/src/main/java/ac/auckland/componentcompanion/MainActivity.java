@@ -116,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Capacitor");
-				overridePendingTransition(android.R.anim.slide_in_left, 0);
 
 
 			}

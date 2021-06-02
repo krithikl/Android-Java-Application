@@ -100,7 +100,7 @@ public class SearchActivity extends AppCompatActivity {
 
 			return myFilter;
 		}
-
+		/* Filters the input sequence and checks if the sequence matches, name, model, or value*/
 		Filter myFilter = new Filter() {
 			/* Runs on a background thread */
 			@Override
@@ -113,7 +113,10 @@ public class SearchActivity extends AppCompatActivity {
 					Log.d(TAG, "No Search Term, Adding all items to item list");
 				} else {
 					for (Item item : itemListAll) {
-						if (item.getMake().toLowerCase().contains(charSequence.toString().toLowerCase())) {
+						if (item.getMake().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+								item.getName().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+								item.getModel().toLowerCase().contains(charSequence.toString().toLowerCase()) ||
+								Float.toString(item.getValue()).toLowerCase().contains(charSequence.toString().toLowerCase())) {
 							Log.d(TAG, "Adding the following item to filter list: ".concat(Integer.toString(item.getId())));
 							filteredList.add(item);
 						}

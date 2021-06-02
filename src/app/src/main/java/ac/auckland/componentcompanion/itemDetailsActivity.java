@@ -46,25 +46,29 @@ public class itemDetailsActivity extends AppCompatActivity {
             String itemPrice = Float.toString(item.getPrice());
             String itemUnit = item.getUnit();
             String imageUrl = item.getPreview();
+            String itemModel = item.getModel();
 
 
 
-            setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit);
+            setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit, itemModel);
 
         }
     }
 
     /* Function to set the image details from the list view */
-    private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit) {
+    private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit, String itemModel) {
         TextView price = findViewById(R.id.unitPrice);
         TextView make = findViewById(R.id.itemMake);
         TextView value = findViewById(R.id.itemValue);
+        TextView model = findViewById(R.id.itemModel);
         ImageView image = findViewById(R.id.image);
+
 
 
         make.setText("Make: " + itemMake);
         value.setText("Value: " + itemValue.concat(itemUnit));
         price.setText("Unit Price: " + itemPrice.concat("¢"));
+        model.setText("Model: " + itemModel);
 
         image.setImageDrawable(Util.drawableFromAsset(this, imageUrl));
 
