@@ -55,11 +55,13 @@ public class ItemListActivity extends AppCompatActivity {
 		/* Replace content of a view */
 		public void onBindViewHolder(ItemListActivity.categoryAdapter.ViewHolder viewholder, final int position) {
 
+
 			String imageName = items.get(position).getPreview();
 			String make = items.get(position).getMake();
 			float value = items.get(position).getValue();
 			float price = items.get(position).getPrice();
 			String unit = items.get(position).getUnit();
+			int imageID = items.get(position).getId();
 
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(ItemListActivity.this, imageName));
 			viewholder.makeText.setText("Make: " + make);
@@ -71,11 +73,7 @@ public class ItemListActivity extends AppCompatActivity {
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 					Intent mainIntent = new Intent(ItemListActivity.this, itemDetailsActivity.class);
-					mainIntent.putExtra("itemMake", make);
-					mainIntent.putExtra("itemValue", Float.toString(value));
-					mainIntent.putExtra("itemPrice", Float.toString(price));
-					mainIntent.putExtra("itemUnit", unit);
-					mainIntent.putExtra("imageUrl", imageName);
+					mainIntent.putExtra("itemID", imageID);
 
 
 					ItemListActivity.this.startActivity(mainIntent);
@@ -89,13 +87,7 @@ public class ItemListActivity extends AppCompatActivity {
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 					Intent mainIntent = new Intent(ItemListActivity.this, itemDetailsActivity.class);
-					mainIntent.putExtra("itemMake", make);
-					mainIntent.putExtra("itemValue", Float.toString(value));
-					mainIntent.putExtra("itemPrice", Float.toString(price));
-					mainIntent.putExtra("itemUnit", unit);
-					mainIntent.putExtra("imageUrl", imageName);
-
-
+					mainIntent.putExtra("itemID", imageID);
 					ItemListActivity.this.startActivity(mainIntent);
 
 

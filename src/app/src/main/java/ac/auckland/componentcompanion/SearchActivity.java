@@ -55,6 +55,9 @@ public class SearchActivity extends AppCompatActivity {
 		/* Replace content of a view */
 		public void onBindViewHolder(SearchActivity.searchAdapter.ViewHolder viewholder, final int position) {
 			String imageName = itemList.get(position).getPreview();
+
+			int imageID = itemList.get(position).getId();
+
 			String make = itemList.get(position).getMake();
 			float value = itemList.get(position).getValue();
 			float price = itemList.get(position).getPrice();
@@ -70,11 +73,7 @@ public class SearchActivity extends AppCompatActivity {
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 					Intent mainIntent = new Intent(SearchActivity.this, itemDetailsActivity.class);
-					mainIntent.putExtra("itemMake", make);
-					mainIntent.putExtra("itemValue", Float.toString(value));
-					mainIntent.putExtra("itemPrice", Float.toString(price));
-					mainIntent.putExtra("itemUnit", unit);
-					mainIntent.putExtra("imageUrl", imageName);
+					mainIntent.putExtra("itemID", imageID);
 
 
 					SearchActivity.this.startActivity(mainIntent);
@@ -88,13 +87,7 @@ public class SearchActivity extends AppCompatActivity {
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 					Intent mainIntent = new Intent(SearchActivity.this, itemDetailsActivity.class);
-					mainIntent.putExtra("itemMake", make);
-					mainIntent.putExtra("itemValue", Float.toString(value));
-					mainIntent.putExtra("itemPrice", Float.toString(price));
-					mainIntent.putExtra("itemUnit", unit);
-					mainIntent.putExtra("imageUrl", imageName);
-
-
+					mainIntent.putExtra("itemID", imageID);
 					SearchActivity.this.startActivity(mainIntent);
 
 
@@ -169,6 +162,10 @@ public class SearchActivity extends AppCompatActivity {
 		searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
+				SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
+				searchAdapter.getFilter().filter(query);
+				RecyclerView recyclerView = findViewById(R.id.search_recycle);
+				recyclerView.setAdapter(searchAdapter);
 
 				return false;
 			}

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class itemDetailsActivity extends AppCompatActivity {
-
+    DataLoader dloader = new DataLoader();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +26,28 @@ public class itemDetailsActivity extends AppCompatActivity {
     }
     /* Catch other extras into the conditional to ensure it isn't retrieving intents that don't exist */
     private void getIncomingIntent() {
-        if (getIntent().hasExtra("itemPrice")) {
-            String itemMake = getIntent().getStringExtra("itemMake");
-            String itemValue = getIntent().getStringExtra("itemValue");
-            String itemPrice = getIntent().getStringExtra("itemPrice");
-            String itemUnit = getIntent().getStringExtra("itemUnit");
-            String imageUrl = getIntent().getStringExtra("imageUrl");
+
+//        if (getIntent().hasExtra("itemPrice")) {
+//            String itemMake = getIntent().getStringExtra("itemMake");
+//            String itemValue = getIntent().getStringExtra("itemValue");
+//            String itemPrice = getIntent().getStringExtra("itemPrice");
+//            String itemUnit = getIntent().getStringExtra("itemUnit");
+//            String imageUrl = getIntent().getStringExtra("imageUrl");
+
+        if (getIntent().hasExtra("itemID")) {
+
+
+            int itemID = getIntent().getIntExtra("itemID",0);
+
+            Item item = dloader.getItem(itemID);
+
+            String itemMake = item.getMake();
+            String itemValue = Float.toString(item.getValue());
+            String itemPrice = Float.toString(item.getPrice());
+            String itemUnit = item.getUnit();
+            String imageUrl = item.getPreview();
+
+
 
             setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit);
 
