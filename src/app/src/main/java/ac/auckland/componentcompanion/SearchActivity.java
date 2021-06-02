@@ -1,6 +1,7 @@
 package ac.auckland.componentcompanion;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class SearchActivity extends AppCompatActivity {
 
 		/* Define the behaviour of each recycler view item */
 		private class ViewHolder extends RecyclerView.ViewHolder {
+			private LinearLayout layout;
 			private ImageButton imageButton;
 			private Button makeText;
 			private Button valueText;
@@ -35,16 +37,12 @@ public class SearchActivity extends AppCompatActivity {
 
 			public ViewHolder(View itemView) {
 				super(itemView);
+				layout = itemView.findViewById(R.id.recycleLayout);
 				imageButton = itemView.findViewById(R.id.image);
 				makeText = itemView.findViewById(R.id.make);
 				valueText = itemView.findViewById(R.id.value);
 				priceText = itemView.findViewById(R.id.price);
 
-				imageButton.setOnClickListener(new View.OnClickListener() {
-					public void onClick(View v) {
-						Log.d(TAG, "Top Pick Item Clicked!");
-					}
-				});
 			}
 		}
 
@@ -67,6 +65,41 @@ public class SearchActivity extends AppCompatActivity {
 			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
 			viewholder.priceText.setText("Price: " + Float.toString(price));
 
+			viewholder.layout.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Intent mainIntent = new Intent(SearchActivity.this, itemDetailsActivity.class);
+					mainIntent.putExtra("itemMake", make);
+					mainIntent.putExtra("itemValue", Float.toString(value));
+					mainIntent.putExtra("itemPrice", Float.toString(price));
+					mainIntent.putExtra("itemUnit", unit);
+					mainIntent.putExtra("imageUrl", imageName);
+
+
+					SearchActivity.this.startActivity(mainIntent);
+
+
+				}
+			});
+
+			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Intent mainIntent = new Intent(SearchActivity.this, itemDetailsActivity.class);
+					mainIntent.putExtra("itemMake", make);
+					mainIntent.putExtra("itemValue", Float.toString(value));
+					mainIntent.putExtra("itemPrice", Float.toString(price));
+					mainIntent.putExtra("itemUnit", unit);
+					mainIntent.putExtra("imageUrl", imageName);
+
+
+					SearchActivity.this.startActivity(mainIntent);
+
+
+				}
+			});
 
 		}
 

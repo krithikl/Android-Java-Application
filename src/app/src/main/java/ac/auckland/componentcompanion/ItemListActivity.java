@@ -60,6 +60,7 @@ public class ItemListActivity extends AppCompatActivity {
 			float value = items.get(position).getValue();
 			float price = items.get(position).getPrice();
 			String unit = items.get(position).getUnit();
+
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(ItemListActivity.this, imageName));
 			viewholder.makeText.setText("Make: " + make);
 			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
@@ -82,6 +83,26 @@ public class ItemListActivity extends AppCompatActivity {
 
 				}
 			});
+
+			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Intent mainIntent = new Intent(ItemListActivity.this, itemDetailsActivity.class);
+					mainIntent.putExtra("itemMake", make);
+					mainIntent.putExtra("itemValue", Float.toString(value));
+					mainIntent.putExtra("itemPrice", Float.toString(price));
+					mainIntent.putExtra("itemUnit", unit);
+					mainIntent.putExtra("imageUrl", imageName);
+
+
+					ItemListActivity.this.startActivity(mainIntent);
+
+
+				}
+			});
+
+
 
 			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
