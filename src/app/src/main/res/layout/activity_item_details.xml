@@ -13,7 +13,7 @@
 
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:background="@drawable/top_pick_style"
+
                 android:layout_marginStart="16dp"
 
                 android:layout_marginTop="16dp"
@@ -32,12 +32,13 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constrainedWidth="true"
-
+                        android:background="@drawable/top_pick_style"
 
                         app:layout_constraintEnd_toStartOf="@+id/image2"
                         tools:layout_conversion_absoluteHeight="324dp"
 
                         tools:srcCompat="@tools:sample/avatars[4]"
+                        android:layout_marginRight="16dp"
 
                         app:layout_constraintVertical_bias="0.449"/>
                 <ImageView
@@ -48,15 +49,22 @@
                         app:layout_constraintStart_toEndOf="@id/image1"
                         app:layout_constraintTop_toTopOf="parent"
                         android:scaleType="fitXY"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+
+                        android:background="@drawable/top_pick_style"
                 />
                 <ImageView
                         android:layout_width="402dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
                         android:layout_height="wrap_content"
                         tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
                         android:id="@+id/image3"
                         app:layout_constraintStart_toEndOf="@id/image2"
                         app:layout_constraintTop_toTopOf="parent"
                         android:scaleType="fitXY"
+                        android:background="@drawable/top_pick_style"
                 />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </HorizontalScrollView>
