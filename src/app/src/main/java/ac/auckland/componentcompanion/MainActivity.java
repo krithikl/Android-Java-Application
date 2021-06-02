@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 				super(itemView);
 				imageButton = itemView.findViewById(R.id.image);
 
+
 				imageButton.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View v) {
 						Log.d(TAG, "Top Pick Item Clicked!");
@@ -46,7 +47,27 @@ public class MainActivity extends AppCompatActivity {
 		/* Replace content of a view */
 		public void onBindViewHolder(ViewHolder viewholder, final int position) {
 			String imageName = items.get(position).getPreview();
+			String make = items.get(position).getMake();
+			float value = items.get(position).getValue();
+			float price = items.get(position).getPrice();
+			String unit = items.get(position).getUnit();
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(MainActivity.this, imageName));
+
+			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Intent mainIntent = new Intent(MainActivity.this, itemDetailsActivity.class);
+					mainIntent.putExtra("itemMake", make);
+					mainIntent.putExtra("itemValue", Float.toString(value));
+					mainIntent.putExtra("itemPrice", Float.toString(price));
+					mainIntent.putExtra("itemUnit", unit);
+					mainIntent.putExtra("imageUrl", imageName);
+					MainActivity.this.startActivity(mainIntent);
+
+
+				}
+			});
 		}
 
 		public int getItemCount() {
