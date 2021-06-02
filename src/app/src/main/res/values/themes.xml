@@ -19,8 +19,6 @@
     <style name="ActivityTransition" parent="Theme.ComponentCompanion">
         <!-- Activity Transitions -->
         <!-- specify enter and exit transitions -->
-        <item name="android:windowEnterTransition">@null</item>
-        <item name="android:windowExitTransition">@null</item>
     </style>
 
     <style name="Theme.ComponentCompanion.NoActionBar">
@@ -32,7 +30,9 @@
     <style name="Theme.ComponentCompanion.CatButton" parent="@style/Widget.MaterialComponents.Button">
         <item name="android:textColor">#ffcc80</item>
         <item name="android:textSize">12dp</item>
-
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowEnterTransition">@transition/explode</item>
+        <item name="android:windowExitTransition">@transition/explode</item>
         <item name="backgroundTint">#1b1b1b</item>
         <item name="cornerRadius">12dp</item>
         <item name="strokeColor">#ffcc80</item>

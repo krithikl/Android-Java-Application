@@ -76,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_main);
 
 		DataLoader dloader = new DataLoader();
@@ -105,7 +106,9 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Resistor");
-				startActivity(activityIntent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
+
+				startActivity(activityIntent);
+				overridePendingTransition(android.R.anim.slide_in_left, 0);
 			}
 		});
 
@@ -113,7 +116,9 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Capacitor");
-				startActivity(activityIntent);
+				overridePendingTransition(android.R.anim.slide_in_left, 0);
+
+
 			}
 		});
 
@@ -122,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Inductor");
 				startActivity(activityIntent);
+				overridePendingTransition(android.R.anim.slide_in_left, 0);
 			}
 		});
 
