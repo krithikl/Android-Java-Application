@@ -23,11 +23,12 @@ public class MainActivity extends AppCompatActivity {
 		/* Define the behaviour of each recycler view item */
 		private class ViewHolder extends RecyclerView.ViewHolder {
 			private ImageButton imageButton;
-
+			private Button topPickText;
 
 			public ViewHolder(View itemView) {
 				super(itemView);
 				imageButton = itemView.findViewById(R.id.image);
+				topPickText = itemView.findViewById(R.id.topPickMake);
 
 
 				imageButton.setOnClickListener(new View.OnClickListener() {
@@ -47,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
 		/* Replace content of a view */
 		public void onBindViewHolder(ViewHolder viewholder, final int position) {
 			String imageName = items.get(position).getPreview();
+			String topPickMake = items.get(position).getMake();
 			int imageID = items.get(position).getId();
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(MainActivity.this, imageName));
-
+			viewholder.topPickText.setText(topPickMake);
 
 			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -63,6 +65,17 @@ public class MainActivity extends AppCompatActivity {
 				}
 			});
 
+			viewholder.topPickText.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Intent mainIntent = new Intent(MainActivity.this, ItemDetailsActivity.class);
+					mainIntent.putExtra("itemID", imageID);
+					MainActivity.this.startActivity(mainIntent);
+
+
+				}
+			});
 		}
 
 		public int getItemCount() {
@@ -93,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
 		topPicks.add(dloader.getItem(17));
 		topPicks.add(dloader.getItem(24));
 		topPicks.add(dloader.getItem(28));
-
 
 		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 		recyclerView.setAdapter(adapter);

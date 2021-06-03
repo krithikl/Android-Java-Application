@@ -16,22 +16,11 @@
             android:background="@drawable/top_pick_style"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="2dp" />
-    <TextView
-            android:layout_width="125dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="10dp"
-            android:paddingLeft="15dp"
-            android:textColor="@color/white"
-            android:background="@drawable/top_pick_style"
-            android:backgroundTint="#1b1b1b"
+    <Button
             android:id="@+id/topPickMake"
-            android:gravity="center_vertical"
-            android:textAllCaps="false"
-            android:textSize="12sp"
-            android:textStyle="bold"
-    />
+            style="@style/Theme.ComponentCompanion.topPickButton"
+            android:layout_marginLeft="8dp"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"/>
 
 </LinearLayout>
