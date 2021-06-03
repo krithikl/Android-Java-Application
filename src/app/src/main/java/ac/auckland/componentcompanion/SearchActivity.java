@@ -134,6 +134,13 @@ public class SearchActivity extends AppCompatActivity {
 			protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
 				itemList.clear();
 				itemList.addAll((ArrayList<Item>) filterResults.values);
+				if (((ArrayList<Item>) filterResults.values).size() == 0) {
+					((TextView) findViewById(R.id.error_msg)).setVisibility(View.VISIBLE);
+					Log.d(TAG, "Search Failed - Showing Error Msg");
+				} else {
+					((TextView) findViewById(R.id.error_msg)).setVisibility(View.GONE);
+					Log.d(TAG, "Search Successful - Showing Items");
+				}
 				notifyDataSetChanged();
 			}
 		};

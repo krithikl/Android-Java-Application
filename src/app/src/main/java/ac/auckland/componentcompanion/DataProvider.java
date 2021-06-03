@@ -5,7 +5,8 @@ public class DataProvider {
 	 * that describe a particular item
 	 */
 	/*
-	 * Components data from https://octopart.com/ (including images)
+	 * Components data from https://octopart.com/
+	 * Images from https://www.digikey.co.nz/
 	 *
 	 */
 	private static final String[][] data = {

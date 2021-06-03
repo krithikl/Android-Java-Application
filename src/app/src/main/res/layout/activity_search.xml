@@ -20,6 +20,25 @@
                 android:iconifiedByDefault="false"
                 android:queryHint="Search"
                 android:background="@drawable/search_bar_style"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/top_pick_style"
+                android:backgroundTint="#1b1b1b"
+                android:id="@+id/error_msg"
+                android:textAllCaps="false"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="No results found"
+                android:visibility="gone"
+        />
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" android:layout_weight="3">
