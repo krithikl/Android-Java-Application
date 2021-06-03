@@ -106,14 +106,13 @@ public class ItemListActivity extends AppCompatActivity {
 		Intent startActivityIntent = getIntent();
 		String category = startActivityIntent.getStringExtra("CATEGORY");
 
-		DataLoader dloader = new DataLoader();
+		DataLoader dloader = new DataLoader(this);
 		Category categoryItems = dloader.getCategory(category);
 		RecyclerView recyclerView = findViewById(R.id.category_items);
 		ItemListActivity.categoryAdapter adapter = new ItemListActivity.categoryAdapter(categoryItems.getItems());
-		recyclerView.setLayoutManager(new LinearLayoutManager(ItemListActivity.this, LinearLayoutManager.VERTICAL, true));
+		recyclerView.setLayoutManager(new LinearLayoutManager(ItemListActivity.this, LinearLayoutManager.VERTICAL, false));
 		recyclerView.setAdapter(adapter);
-		/* Remember order is reversed above */
-		recyclerView.scrollToPosition(categoryItems.getLength() - 1);
+		recyclerView.scrollToPosition(0);
 
 		((TextView) findViewById(R.id.search_text)).setText(category.concat("s"));
 	}

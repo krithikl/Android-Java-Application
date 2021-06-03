@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.SnapHelper;
 import java.util.ArrayList;
 
 public class ItemDetailsActivity extends AppCompatActivity {
-	DataLoader dloader = new DataLoader();
+	DataLoader dloader;
 	private String TAG = "ac.auckland.componentcompanion.ItemDetailsActivity";
 
 	/* Define the behaviour of the recycler view */
@@ -65,6 +65,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_item_details);
+		this.dloader = new DataLoader(this);
 
 		int itemID = getIntent().getIntExtra("itemID", 0);
 		Item item = dloader.getItem(itemID);
@@ -75,12 +76,10 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		*/
 		SnapHelper snapHelper = new PagerSnapHelper();
 		ItemDetailsActivity.ImagesAdapter adapter = new ItemDetailsActivity.ImagesAdapter(item);
-		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 		snapHelper.attachToRecyclerView(recyclerView);
 		recyclerView.setAdapter(adapter);
-
-		/* Remember the layout is reversed */
-		recyclerView.scrollToPosition(2);
+		recyclerView.scrollToPosition(0);
 
 		// Back button remap, goes to previous activity
 		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
@@ -103,6 +102,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 			int itemID = getIntent().getIntExtra("itemID", 0);
 
 			Item item = dloader.getItem(itemID);
+			this.dloader.addItemView(itemID);
 
 			String itemMake = item.getMake();
 			String itemValue = Float.toString(item.getValue());
@@ -132,6 +132,5 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		model.setText("Model: " + itemModel);
 
 		image.setImageDrawable(Util.drawableFromAsset(this, imageUrl));
-
 	}
 }
