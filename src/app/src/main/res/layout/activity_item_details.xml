@@ -22,6 +22,9 @@
                 tools:listitem="@layout/images_recycler"
                 android:background="@drawable/top_pick_style"
                 android:paddingBottom="8dp"
+                android:paddingRight="8dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="6dp"
         >
         </androidx.recyclerview.widget.RecyclerView>
         <LinearLayout
