@@ -47,6 +47,8 @@ public class Item {
 		return model;
 	}
 
+	public String getMount() { return mount; }
+
 	public float getPrice() {
 		return price;
 	}

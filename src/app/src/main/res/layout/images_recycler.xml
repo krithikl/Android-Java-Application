@@ -3,13 +3,13 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="horizontal"
-              android:padding="2dp"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
 >
     <ImageView
             android:layout_width="match_parent"
-            android:layout_height="301dp"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/background"
-            android:id="@+id/large_image_view"/>
+            android:id="@+id/large_image_view"
+            android:scaleType="fitCenter" />
 </LinearLayout>
