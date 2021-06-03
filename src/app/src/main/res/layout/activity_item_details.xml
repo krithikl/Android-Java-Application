@@ -20,6 +20,7 @@
                 android:layout_height="274dp"
                 android:id="@+id/large_images"
                 tools:listitem="@layout/images_recycler"
+                android:background="@drawable/top_pick_style"
         >
         </androidx.recyclerview.widget.RecyclerView>
         <LinearLayout
@@ -32,6 +33,7 @@
                     android:layout_height="85dp"
                     android:id="@+id/image"
                     android:layout_gravity="center_vertical"
+                    android:background="@drawable/top_pick_style"
                     />
             <TextView
                     android:text="TextView"
@@ -68,23 +70,23 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/itemModel"
+                android:id="@+id/itemValue"
                 android:theme="@style/Theme.ComponentCompanion.HighlightText"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:paddingBottom="16dp"
-                android:paddingTop="16dp"
+                android:paddingTop="8dp"
                 android:lines="1"/>
         <TextView
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/itemValue"
+                android:id="@+id/itemModel"
                 android:theme="@style/Theme.ComponentCompanion.HighlightText"
-                android:textSize="30sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:paddingBottom="16dp"
-                android:paddingTop="16dp"
+                android:paddingTop="8dp"
                 android:lines="1"/>
         <TextView
                 android:text="TextView"
@@ -95,7 +97,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:paddingBottom="16dp"
-                android:paddingTop="16dp"
+                android:paddingTop="8dp"
                 android:lines="1"/>
     </LinearLayout>
 </LinearLayout>

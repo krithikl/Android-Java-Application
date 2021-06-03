@@ -134,7 +134,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		value.setText("Value: " + itemValue.concat(itemUnit));
 		price.setText("Unit Price: " + itemPrice.concat("¢"));
 		model.setText("Model: " + itemModel);
-		views.setText("Views: " + views);
+		views.setText("Views: " + itemViews);
 
 		image.setImageDrawable(Util.drawableFromAsset(this, imageUrl));
 	}

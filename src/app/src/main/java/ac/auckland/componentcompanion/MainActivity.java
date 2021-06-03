@@ -25,11 +25,13 @@ public class MainActivity extends AppCompatActivity {
 		private class ViewHolder extends RecyclerView.ViewHolder {
 			private ImageButton imageButton;
 			private Button topPickText;
+			private TextView topPickViews;
 
 			public ViewHolder(View itemView) {
 				super(itemView);
 				imageButton = itemView.findViewById(R.id.image);
 				topPickText = itemView.findViewById(R.id.topPickMake);
+				topPickViews = itemView.findViewById(R.id.topPickViews);
 
 
 				imageButton.setOnClickListener(new View.OnClickListener() {
@@ -50,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
 		public void onBindViewHolder(ViewHolder viewholder, final int position) {
 			String imageName = items.get(position).getPreview();
 			String topPickMake = items.get(position).getMake();
+
 			int imageID = items.get(position).getId();
+			String itemViews = Integer.toString(dloader.getItemViews(imageID));
+
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(MainActivity.this, imageName));
 			viewholder.topPickText.setText(topPickMake);
+			viewholder.topPickViews.setText("Views: " + itemViews);
 
 			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
 				@Override
