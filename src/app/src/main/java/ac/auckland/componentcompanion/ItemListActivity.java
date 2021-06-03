@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -115,6 +116,15 @@ public class ItemListActivity extends AppCompatActivity {
 		recyclerView.scrollToPosition(0);
 
 		((TextView) findViewById(R.id.search_text)).setText(category.concat("s"));
+
+		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
+			@Override
+			public void handleOnBackPressed() {
+				finish();
+				overridePendingTransition(0, R.anim.push_down_out);
+			}
+		};
+		getOnBackPressedDispatcher().addCallback(this, backButtonCall);
 	}
 
 }

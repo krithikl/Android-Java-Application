@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, SearchActivity.class);
 				startActivity(activityIntent);
-				overridePendingTransition(0,0);
+				overridePendingTransition(android.R.anim.fade_in,0);
 			}
 		});
 

@@ -202,6 +202,7 @@ public class SearchActivity extends AppCompatActivity {
 			@Override
 			public void handleOnBackPressed() {
 				finish();
+				overridePendingTransition(0,R.anim.push_down_out);
 			}
 		};
 		getOnBackPressedDispatcher().addCallback(this, backButtonCall);
