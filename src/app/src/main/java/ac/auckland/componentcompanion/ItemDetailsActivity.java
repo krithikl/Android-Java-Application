@@ -113,28 +113,42 @@ public class ItemDetailsActivity extends AppCompatActivity {
 			String imageUrl = item.getPreview();
 			String itemModel = item.getModel();
 			String itemViews = Integer.toString(this.dloader.getItemViews(itemID));
+			String itemCat = item.getName();
 
 
-			setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit, itemModel, itemViews);
+			setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit, itemModel, itemViews, itemCat);
 
 		}
 	}
 
 	/* Function to set the image details from the list view */
-	private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit, String itemModel, String itemViews) {
+	private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit, String itemModel, String itemViews, String itemCat) {
 		TextView price = findViewById(R.id.unitPrice);
 		TextView make = findViewById(R.id.itemMake);
 		TextView value = findViewById(R.id.itemValue);
 		TextView model = findViewById(R.id.itemModel);
 		ImageView image = findViewById(R.id.image);
 		TextView views = findViewById(R.id.itemViews);
+		TextView category = findViewById(R.id.category);
 
 
 		make.setText("Make: " + itemMake);
-		value.setText("Value: " + itemValue.concat(itemUnit));
+		if (itemCat == "Resistor") {
+			value.setText("Resistance: " + itemValue.concat(itemUnit));
+		}
+
+		else if (itemCat == "Capacitor") {
+			value.setText("Capacitance: " + itemValue.concat(itemUnit));
+		}
+
+		else if (itemCat == "Inductor") {
+			value.setText("Inductance: " + itemValue.concat(itemUnit));
+		}
+
 		price.setText("Unit Price: " + itemPrice.concat("¢"));
 		model.setText("Model: " + itemModel);
 		views.setText("Views: " + itemViews);
+		category.setText("Type: " + itemCat);
 
 		image.setImageDrawable(Util.drawableFromAsset(this, imageUrl));
 	}
