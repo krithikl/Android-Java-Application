@@ -100,9 +100,11 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
 
 			int itemID = getIntent().getIntExtra("itemID", 0);
+			String itemViewPath = getIntent().getStringExtra("itemID");
 
 			Item item = dloader.getItem(itemID);
 			this.dloader.addItemView(itemID);
+
 
 			String itemMake = item.getMake();
 			String itemValue = Float.toString(item.getValue());
@@ -110,26 +112,29 @@ public class ItemDetailsActivity extends AppCompatActivity {
 			String itemUnit = item.getUnit();
 			String imageUrl = item.getPreview();
 			String itemModel = item.getModel();
+			String itemViews = Integer.toString(this.dloader.getItemViews(itemID));
 
 
-			setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit, itemModel);
+			setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit, itemModel, itemViews);
 
 		}
 	}
 
 	/* Function to set the image details from the list view */
-	private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit, String itemModel) {
+	private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit, String itemModel, String itemViews) {
 		TextView price = findViewById(R.id.unitPrice);
 		TextView make = findViewById(R.id.itemMake);
 		TextView value = findViewById(R.id.itemValue);
 		TextView model = findViewById(R.id.itemModel);
 		ImageView image = findViewById(R.id.image);
+		TextView views = findViewById(R.id.itemViews);
 
 
 		make.setText("Make: " + itemMake);
 		value.setText("Value: " + itemValue.concat(itemUnit));
 		price.setText("Unit Price: " + itemPrice.concat("¢"));
 		model.setText("Model: " + itemModel);
+		views.setText("Views: " + views);
 
 		image.setImageDrawable(Util.drawableFromAsset(this, imageUrl));
 	}
