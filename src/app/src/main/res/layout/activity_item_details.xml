@@ -6,7 +6,7 @@
               android:orientation="vertical"
               android:weightSum="10"
               tools:context=".ItemDetailsActivity"
-              android:background="#212121" >
+              android:background="#212121">
 
     <LinearLayout
             android:layout_weight="6"
@@ -23,37 +23,56 @@
         />
     </LinearLayout>
 
-    <RelativeLayout
-            android:layout_weight="2"
-            android:id="@+id/relative1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/background"
+            android:id="@+id/image"
+            android:scaleX="3"
+            android:scaleY="3" />
 
-        <LinearLayout
-                android:orientation="vertical"
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:padding="15dp" >
+        <TextView
+                android:text="TextView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/background" android:id="@+id/image"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/itemModel"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/itemValue"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/itemMake"/>
-            <TextView
-                    android:text="TextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/unitPrice"/>
-        </LinearLayout>
-
-    </RelativeLayout>
-
+                android:layout_height="wrap_content"
+                android:id="@+id/itemMake"
+                android:theme="@style/Theme.ComponentCompanion.HighlightText"
+                android:textSize="45sp"
+                android:textStyle="bold"
+                android:lines="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/itemModel"
+                android:theme="@style/Theme.ComponentCompanion.HighlightText"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:lines="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/itemValue"
+                android:theme="@style/Theme.ComponentCompanion.HighlightText"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:lines="1"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/unitPrice"
+                android:theme="@style/Theme.ComponentCompanion.HighlightText"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:lines="1"/>
+    </LinearLayout>
 </LinearLayout>

@@ -55,6 +55,10 @@
 
     </style>
 
+    <style name="Theme.ComponentCompanion.HighlightText">
+        <item name="android:textColor">#ffcc80</item>
+    </style>
+
     <style name="Theme.ComponentCompanion.TopPicks">
         <item name="color">#373737</item>
         <item name="backgroundTint">#373737</item>
