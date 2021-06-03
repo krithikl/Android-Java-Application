@@ -186,6 +186,22 @@ public class DataLoader {
 		return items;
 	}
 
+	/* Reset all item views to zero */
+	public void resetViews() {
+		FileOutputStream fout;
+		Log.d(TAG, "Resetting all item views to zero");
+		try {
+			fout = this.context.openFileOutput(DataLoader.viewPath, Context.MODE_PRIVATE);
+			for (int i = 0; i < DataLoader.views.length; ++i) {
+				DataLoader.views[i] = 0;
+				Util.writeStr2File(Integer.toString(0).concat("\n"), fout);
+			}
+			fout.close();
+		} catch (Exception g) {
+			Log.e(TAG, "DataLoader() Exception (resetViews())!");
+		}
+	}
+
 	public void addItemView(int index) {
 		++(DataLoader.views[index]);
 		/* Write this data out to file */
