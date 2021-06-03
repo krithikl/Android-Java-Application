@@ -74,9 +74,8 @@ public class SearchActivity extends AppCompatActivity {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 					Intent mainIntent = new Intent(SearchActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
-
-
 					SearchActivity.this.startActivity(mainIntent);
+					overridePendingTransition(R.anim.slide_in_right,0);
 
 
 				}
@@ -89,6 +88,7 @@ public class SearchActivity extends AppCompatActivity {
 					Intent mainIntent = new Intent(SearchActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 					SearchActivity.this.startActivity(mainIntent);
+					overridePendingTransition(R.anim.slide_in_right,0);
 
 
 				}

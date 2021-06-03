@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 					Intent mainIntent = new Intent(MainActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 					MainActivity.this.startActivity(mainIntent);
+					overridePendingTransition(R.anim.slide_in_right, 0);
 
 
 				}

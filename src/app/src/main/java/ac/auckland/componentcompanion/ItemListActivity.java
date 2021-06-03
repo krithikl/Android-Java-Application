@@ -75,6 +75,7 @@ public class ItemListActivity extends AppCompatActivity {
 					Intent mainIntent = new Intent(ItemListActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 					ItemListActivity.this.startActivity(mainIntent);
+					overridePendingTransition(R.anim.slide_in_right,0);
 				}
 			});
 
@@ -84,6 +85,7 @@ public class ItemListActivity extends AppCompatActivity {
 					Intent mainIntent = new Intent(ItemListActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 					ItemListActivity.this.startActivity(mainIntent);
+					overridePendingTransition(R.anim.slide_in_right,0);
 				}
 			});
 		}
