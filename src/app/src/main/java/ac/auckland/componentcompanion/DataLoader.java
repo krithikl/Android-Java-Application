@@ -14,10 +14,10 @@ public class DataLoader {
 	private static int[] views = new int[30];
 	private static final String viewPath = "views.txt";
 	private Context context;
-	private static ArrayList<Item> items = new ArrayList<Item>();
-	private static Category category0 = new Category("Resistors");
-	private static Category category1 = new Category("Capacitors");
-	private static Category category2 = new Category("Inductors");
+	private ArrayList<Item> items = new ArrayList<Item>();
+	private Category category0 = new Category("Resistors");
+	private Category category1 = new Category("Capacitors");
+	private Category category2 = new Category("Inductors");
 
 
 	public DataLoader(Context context) {

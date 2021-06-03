@@ -100,7 +100,6 @@ public class ItemDetailsActivity extends AppCompatActivity {
 
 
 			int itemID = getIntent().getIntExtra("itemID", 0);
-			String itemViewPath = getIntent().getStringExtra("itemID");
 
 			Item item = dloader.getItem(itemID);
 			this.dloader.addItemView(itemID);
