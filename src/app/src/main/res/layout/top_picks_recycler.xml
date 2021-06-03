@@ -10,11 +10,28 @@
 
     <ImageButton
             android:id="@+id/image"
-            android:layout_width="120dp"
+            android:layout_width="124dp"
             android:layout_height="124dp"
             android:scaleType="fitXY"
             android:background="@drawable/top_pick_style"
-            android:layout_marginLeft="2dp"
-            android:padding="5dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginRight="2dp" />
+    <TextView
+            android:layout_width="125dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/top_pick_style"
+            android:backgroundTint="#1b1b1b"
+            android:id="@+id/topPickMake"
+            android:gravity="center_vertical"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textStyle="bold"
+    />
+
 </LinearLayout>

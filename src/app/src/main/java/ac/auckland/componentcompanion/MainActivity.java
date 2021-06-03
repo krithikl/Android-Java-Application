@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 		private class ViewHolder extends RecyclerView.ViewHolder {
 			private ImageButton imageButton;
 
+
 			public ViewHolder(View itemView) {
 				super(itemView);
 				imageButton = itemView.findViewById(R.id.image);
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 			int imageID = items.get(position).getId();
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(MainActivity.this, imageName));
 
+
 			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 				}
 			});
+
 		}
 
 		public int getItemCount() {
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
 		topPicks.add(dloader.getItem(17));
 		topPicks.add(dloader.getItem(24));
 		topPicks.add(dloader.getItem(28));
+
 
 		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
 		recyclerView.setAdapter(adapter);
@@ -138,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
 				overridePendingTransition(0,0);
 			}
 		});
+
 	}
 
 }

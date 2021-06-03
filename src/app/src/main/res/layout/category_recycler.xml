@@ -16,6 +16,7 @@
             android:scaleType="fitXY"
             android:backgroundTint="#373737"
             android:layout_marginTop="5dp"
+            android:background="@drawable/top_pick_style"
     />
     <LinearLayout
             android:orientation="vertical"
