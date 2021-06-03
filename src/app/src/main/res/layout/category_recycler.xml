@@ -4,17 +4,18 @@
               android:padding="8dp"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:id="@+id/category_layout">
+              android:id="@+id/category_layout"
+              android:clickable="true"
+              android:focusable="true"
+              android:background="@drawable/custom_ripple" >
     <ImageButton
             android:layout_width="286dp"
             android:layout_height="114dp"
             android:id="@+id/image"
             android:layout_weight="1"
             android:scaleType="fitXY"
-            android:background="@drawable/top_pick_style"
             android:backgroundTint="#373737"
             android:layout_marginTop="5dp"
-
     />
     <LinearLayout
             android:orientation="vertical"

@@ -27,7 +27,7 @@ public class ItemListActivity extends AppCompatActivity {
 		/* Define the behaviour of each recycler view item */
 		private class ViewHolder extends RecyclerView.ViewHolder {
 			private LinearLayout layout;
-			private ImageButton imageButton;
+			private ImageButton imageView;
 			private TextView makeText;
 			private TextView valueText;
 			private TextView priceText;
@@ -37,7 +37,7 @@ public class ItemListActivity extends AppCompatActivity {
 			public ViewHolder(View itemView) {
 				super(itemView);
 				layout = itemView.findViewById(R.id.category_layout);
-				imageButton = itemView.findViewById(R.id.image);
+				imageView = itemView.findViewById(R.id.image);
 				makeText  = itemView.findViewById(R.id.make);
 				valueText  = itemView.findViewById(R.id.value);
 				priceText  = itemView.findViewById(R.id.price);
@@ -63,7 +63,7 @@ public class ItemListActivity extends AppCompatActivity {
 			String unit = items.get(position).getUnit();
 			int imageID = items.get(position).getId();
 
-			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(ItemListActivity.this, imageName));
+			viewholder.imageView.setImageDrawable(Util.drawableFromAsset(ItemListActivity.this, imageName));
 			viewholder.makeText.setText("Make: " + make);
 			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
 			viewholder.priceText.setText("Price: "+ Float.toString(price));
@@ -71,37 +71,20 @@ public class ItemListActivity extends AppCompatActivity {
 			viewholder.layout.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 					Intent mainIntent = new Intent(ItemListActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
-
-
 					ItemListActivity.this.startActivity(mainIntent);
-
-
 				}
 			});
 
-			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
+			viewholder.imageView.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
-					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
 					Intent mainIntent = new Intent(ItemListActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 					ItemListActivity.this.startActivity(mainIntent);
-
-
 				}
 			});
-
-
-
-			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
-				public void onClick(View v) {
-					Log.d(TAG, "Top Pick Item Clicked (Image Button)!");
-				}
-			});
-
 		}
 
 		public int getItemCount() {

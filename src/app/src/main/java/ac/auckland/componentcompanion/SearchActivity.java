@@ -30,14 +30,14 @@ public class SearchActivity extends AppCompatActivity {
 		private class ViewHolder extends RecyclerView.ViewHolder {
 			private LinearLayout layout;
 			private ImageButton imageButton;
-			private Button makeText;
-			private Button valueText;
-			private Button priceText;
+			private TextView makeText;
+			private TextView valueText;
+			private TextView priceText;
 
 
 			public ViewHolder(View itemView) {
 				super(itemView);
-				layout = itemView.findViewById(R.id.recycleLayout);
+				layout = itemView.findViewById(R.id.search_recycle_layout);
 				imageButton = itemView.findViewById(R.id.image);
 				makeText = itemView.findViewById(R.id.make);
 				valueText = itemView.findViewById(R.id.value);
