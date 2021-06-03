@@ -72,7 +72,7 @@ public class SearchActivity extends AppCompatActivity {
 				@Override
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
-					Intent mainIntent = new Intent(SearchActivity.this, itemDetailsActivity.class);
+					Intent mainIntent = new Intent(SearchActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 
 
@@ -86,7 +86,7 @@ public class SearchActivity extends AppCompatActivity {
 				@Override
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
-					Intent mainIntent = new Intent(SearchActivity.this, itemDetailsActivity.class);
+					Intent mainIntent = new Intent(SearchActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 					SearchActivity.this.startActivity(mainIntent);
 

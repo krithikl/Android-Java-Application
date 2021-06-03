@@ -1,6 +1,5 @@
 package ac.auckland.componentcompanion;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.util.Log;
 import android.view.*;
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 				@Override
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
-					Intent mainIntent = new Intent(MainActivity.this, itemDetailsActivity.class);
+					Intent mainIntent = new Intent(MainActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
 					MainActivity.this.startActivity(mainIntent);
 

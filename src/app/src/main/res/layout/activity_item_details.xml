@@ -1,148 +1,59 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:orientation="vertical"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="#212121">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="10"
+              tools:context=".ItemDetailsActivity"
+              android:background="#212121" >
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+            android:layout_weight="6"
+            android:id="@+id/linear1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/linearLayout3">
-        <HorizontalScrollView
+            android:layout_height="0dp"
+            android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/large_images"
+                tools:listitem="@layout/images_recycler"
+        />
+    </LinearLayout>
 
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+    <RelativeLayout
+            android:layout_weight="2"
+            android:id="@+id/relative1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
 
-                android:layout_marginStart="16dp"
-
-                android:layout_marginTop="16dp"
-                android:layout_height="334dp" android:id="@+id/imageGallery">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/linearLayout2"
-                    tools:layout_conversion_absoluteHeight="334dp"
-                    tools:layout_editor_absoluteY="16dp"
-                    tools:layout_editor_absoluteX="-121dp"
-                    tools:layout_conversion_absoluteWidth="1206dp">
-                <ImageView
-                        android:layout_width="402dp"
-                        android:layout_height="match_parent"
-                        android:id="@+id/image1"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constrainedWidth="true"
-                        android:background="@drawable/top_pick_style"
-
-                        app:layout_constraintEnd_toStartOf="@+id/image2"
-                        tools:layout_conversion_absoluteHeight="324dp"
-
-                        tools:srcCompat="@tools:sample/avatars[4]"
-                        android:layout_marginRight="16dp"
-
-                        app:layout_constraintVertical_bias="0.449"/>
-                <ImageView
-                        android:layout_width="402dp"
-                        android:layout_height="wrap_content"
-                        tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
-                        android:id="@+id/image2"
-                        app:layout_constraintStart_toEndOf="@id/image1"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:scaleType="fitXY"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-
-                        android:background="@drawable/top_pick_style"
-                />
-                <ImageView
-                        android:layout_width="402dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_height="wrap_content"
-                        tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
-                        android:id="@+id/image3"
-                        app:layout_constraintStart_toEndOf="@id/image2"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:scaleType="fitXY"
-                        android:background="@drawable/top_pick_style"
-                />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </HorizontalScrollView>
-        <TextView
-                android:layout_width="213dp"
-                android:layout_height="96dp"
-                android:text="Price per Unit: "
-                android:textAlignment="textStart"
-                android:inputType="none"
-                android:ems="10"
-                android:id="@+id/unitPrice"
-                style="@style/Theme.ComponentCompanion.TextView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/image"
-                app:layout_constraintHorizontal_bias="0.893"
-                android:textSize="18sp"
-                android:clickable="false"
-                android:editable="false"
-                android:textIsSelectable="false"
-                app:layout_constraintTop_toBottomOf="@+id/imageGallery"
-                android:layout_marginTop="12dp"/>
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="432dp"
-                android:layout_height="248dp"
-                app:layout_constraintTop_toBottomOf="@+id/unitPrice"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                android:id="@+id/linearLayout4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-            <TextView
-                    android:text="Make"
-                    android:textAlignment="textStart"
-                    android:textSize="24sp"
-                    style="@style/Theme.ComponentCompanion.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/itemMake"
-                    android:layout_weight="2"/>
-            <TextView
-                    android:text="Value"
-                    style="@style/Theme.ComponentCompanion.TextView"
-                    android:layout_width="match_parent"
-                    android:textSize="18sp"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/itemValue"
-                    android:layout_weight="2"/>
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/background" android:id="@+id/image"/>
             <TextView
                     android:text="TextView"
                     android:layout_width="match_parent"
-                    style="@style/Theme.ComponentCompanion.TextView"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/itemModel"
-                    android:layout_weight="2"/>
+                    android:layout_height="wrap_content" android:id="@+id/itemModel"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/itemValue"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/itemMake"/>
+            <TextView
+                    android:text="TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/unitPrice"/>
         </LinearLayout>
-        <ImageView
-                android:id="@+id/image"
-                android:layout_width="147dp"
-                android:layout_height="142dp"
-                android:layout_gravity="center"
-                tools:srcCompat="@tools:sample/avatars[0]"
-                android:backgroundTint="#1b1b1b"
-                android:layout_marginLeft="32dp"
-                android:background="@drawable/top_pick_style"
-                android:paddingBottom="10dp"
-                android:paddingTop="10dp"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:scaleType="fitXY"
 
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/unitPrice"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-                app:layout_constraintHorizontal_bias="0.021"
-                android:layout_marginBottom="32dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.906"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+    </RelativeLayout>
+
+</LinearLayout>
