@@ -37,14 +37,19 @@
                     />
             <TextView
                     android:text="TextView"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="75dp"
                     android:id="@+id/unitPrice"
                     android:theme="@style/Theme.ComponentCompanion.HighlightText"
                     android:textSize="24sp"
                     android:paddingTop="16dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
                     android:textStyle="bold"
                     android:layout_gravity="center_vertical"
+                    android:background="@drawable/top_pick_style"
+                    android:backgroundTint="#1b1b1b"
+
                     android:lines="1"/>
         </LinearLayout>
     </LinearLayout>
@@ -63,41 +68,54 @@
                 android:theme="@style/Theme.ComponentCompanion.HighlightText"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:paddingBottom="16dp"
-                android:paddingTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="8dp"
+                android:background="@drawable/top_pick_style"
+                android:backgroundTint="#1b1b1b"
+                android:paddingRight="8dp"
                 android:lines="1"/>
         <TextView
                 android:text="TextView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/itemValue"
                 android:theme="@style/Theme.ComponentCompanion.HighlightText"
+                android:background="@drawable/top_pick_style"
+                android:backgroundTint="#1b1b1b"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:paddingBottom="16dp"
-                android:paddingTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:lines="1"/>
         <TextView
                 android:text="TextView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/itemModel"
                 android:theme="@style/Theme.ComponentCompanion.HighlightText"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:paddingBottom="16dp"
-                android:paddingTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="8dp"
+                android:background="@drawable/top_pick_style"
+                android:paddingRight="8dp"
+                android:backgroundTint="#1b1b1b"
                 android:lines="1"/>
         <TextView
                 android:text="TextView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/itemViews"
                 android:theme="@style/Theme.ComponentCompanion.HighlightText"
+                android:background="@drawable/top_pick_style"
+                android:backgroundTint="#1b1b1b"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:paddingBottom="16dp"
-                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:layout_marginBottom="16dp"
+                android:paddingLeft="8dp"
+
                 android:lines="1"/>
     </LinearLayout>
 </LinearLayout>
