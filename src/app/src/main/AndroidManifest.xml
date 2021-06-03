@@ -9,16 +9,25 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.ComponentCompanion">
-        <activity android:name="ac.auckland.componentcompanion.ItemDetailsActivity" android:theme="@style/ActivityTransition">
+        <activity
+                android:name="ac.auckland.componentcompanion.ItemDetailsActivity"
+                android:theme="@style/ActivityTransition"
+                android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name="ac.auckland.componentcompanion.ItemListActivity" android:theme="@style/ActivityTransition">
+        <activity
+                android:name="ac.auckland.componentcompanion.ItemListActivity"
+                android:theme="@style/ActivityTransition"
+                android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="ac.auckland.componentcompanion.SearchActivity"
                 android:label="@string/title_activity_search"
-                android:theme="@style/Theme.ComponentCompanion.NoActionBar">
+                android:theme="@style/Theme.ComponentCompanion.NoActionBar"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name="ac.auckland.componentcompanion.MainActivity">
+        <activity android:name="ac.auckland.componentcompanion.MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

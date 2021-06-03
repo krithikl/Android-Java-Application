@@ -96,14 +96,6 @@ public class ItemDetailsActivity extends AppCompatActivity {
 	/* Catch other extras into the conditional to ensure it isn't retrieving intents that don't exist */
 	private void getIncomingIntent() {
 
-//        if (getIntent().hasExtra("itemPrice")) {
-//            String itemMake = getIntent().getStringExtra("itemMake");
-//            String itemValue = getIntent().getStringExtra("itemValue");
-//            String itemPrice = getIntent().getStringExtra("itemPrice");
-//            String itemUnit = getIntent().getStringExtra("itemUnit");
-//            String imageUrl = getIntent().getStringExtra("imageUrl");
-
-
 		if (getIntent().hasExtra("itemID")) {
 
 
