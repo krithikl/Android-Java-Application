@@ -114,15 +114,16 @@ public class ItemDetailsActivity extends AppCompatActivity {
 			String itemModel = item.getModel();
 			String itemViews = Integer.toString(this.dloader.getItemViews(itemID));
 			String itemCat = item.getName();
+			String itemMount = item.getMount();
 
 
-			setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit, itemModel, itemViews, itemCat);
+			setImageDetails(imageUrl, itemMake, itemValue, itemPrice, itemUnit, itemModel, itemViews, itemCat, itemMount);
 
 		}
 	}
 
 	/* Function to set the image details from the list view */
-	private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit, String itemModel, String itemViews, String itemCat) {
+	private void setImageDetails(String imageUrl, String itemMake, String itemValue, String itemPrice, String itemUnit, String itemModel, String itemViews, String itemCat, String itemMount) {
 		TextView price = findViewById(R.id.unitPrice);
 		TextView make = findViewById(R.id.itemMake);
 		TextView value = findViewById(R.id.itemValue);
@@ -130,25 +131,28 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		ImageView image = findViewById(R.id.image);
 		TextView views = findViewById(R.id.itemViews);
 		TextView category = findViewById(R.id.category);
+		TextView mount = findViewById(R.id.mountType);
 
 
-		make.setText("Make: " + itemMake);
-		if (itemCat == "Resistor") {
-			value.setText("Resistance: " + itemValue.concat(itemUnit));
-		}
 
-		else if (itemCat == "Capacitor") {
-			value.setText("Capacitance: " + itemValue.concat(itemUnit));
-		}
 
-		else if (itemCat == "Inductor") {
-			value.setText("Inductance: " + itemValue.concat(itemUnit));
-		}
+
+
 
 		price.setText("Unit Price: " + itemPrice.concat("¢"));
 		model.setText("Model: " + itemModel);
 		views.setText("Views: " + itemViews);
 		category.setText("Type: " + itemCat);
+		mount.setText("Mount Type: " + itemMount);
+		make.setText("Make: " + itemMake);
+
+		if (itemCat == "Resistor") {
+			value.setText("Resistance: " + itemValue.concat(itemUnit));
+		} else if (itemCat == "Capacitor") {
+			value.setText("Capacitance: " + itemValue.concat(itemUnit));
+		} else if (itemCat == "Inductor") {
+			value.setText("Inductance: " + itemValue.concat(itemUnit));
+		}
 
 		image.setImageDrawable(Util.drawableFromAsset(this, imageUrl));
 	}
