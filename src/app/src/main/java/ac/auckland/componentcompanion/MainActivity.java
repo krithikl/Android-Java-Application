@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 	private String TAG = "ac.auckland.componentcompanion.MainActivity";
+	private DataLoader dloader = null;
 
 	/* Define the behaviour of the recycler view */
 	private class TopPicksAdapter extends RecyclerView.Adapter<TopPicksAdapter.ViewHolder> {
@@ -72,29 +73,24 @@ public class MainActivity extends AppCompatActivity {
 		}
 	}
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		setContentView(R.layout.activity_main);
-
-		DataLoader dloader = new DataLoader();
-		ArrayList<Item> topPicks = new ArrayList<Item>(6);
+	protected void setUpTopPicks() {
+		ArrayList<Item> topPicks = dloader.getTopSix();
 
 		RecyclerView recyclerView = findViewById(R.id.top_picks);
 		TopPicksAdapter adapter = new TopPicksAdapter(topPicks);
 
-		topPicks.add(dloader.getItem(1));
-		topPicks.add(dloader.getItem(12));
-		topPicks.add(dloader.getItem(14));
-		topPicks.add(dloader.getItem(17));
-		topPicks.add(dloader.getItem(24));
-		topPicks.add(dloader.getItem(28));
-
-		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 		recyclerView.setAdapter(adapter);
-		/* Remember the layout is reversed */
-		recyclerView.scrollToPosition(topPicks.size() - 1);
+		recyclerView.scrollToPosition(0);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		this.dloader = new DataLoader(this);
+
+		setUpTopPicks();
 
 		Button cat0Btn = findViewById(R.id.cat0Btn);
 		Button cat1Btn = findViewById(R.id.cat1Btn);
@@ -138,6 +134,14 @@ public class MainActivity extends AppCompatActivity {
 				overridePendingTransition(0,0);
 			}
 		});
+	}
+
+	protected void onResume() {
+		super.onResume();
+		/* Update top picks */
+		setUpTopPicks();
+		Log.d(TAG, "In onResume()");
+
 	}
 
 }

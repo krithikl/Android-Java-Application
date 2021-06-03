@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
-	private DataLoader dataloader = new DataLoader();
+	private DataLoader dataloader = new DataLoader(this);
 
 
 	private String TAG = "ac.auckland.componentcompanion.SearchActivity";
@@ -154,18 +154,18 @@ public class SearchActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_search);
 
 		Log.d(TAG, "onCreate()");
-		DataLoader dloader = new DataLoader();
+		DataLoader dloader = new DataLoader(this);
 		RecyclerView recyclerView = findViewById(R.id.search_recycle);
 		SearchActivity.searchAdapter adapter = new SearchActivity.searchAdapter(dloader.getItems());
 
-		recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.VERTICAL, true));
+		recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.VERTICAL, false));
 		recyclerView.setAdapter(adapter);
 
 		SearchView searchBar = findViewById(R.id.searchBar);
 		searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
-				SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
+				SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.getItems());
 				searchAdapter.getFilter().filter(query);
 				RecyclerView recyclerView = findViewById(R.id.search_recycle);
 				recyclerView.setAdapter(searchAdapter);
@@ -175,7 +175,7 @@ public class SearchActivity extends AppCompatActivity {
 
 			@Override
 			public boolean onQueryTextChange(String inputText) {
-				SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
+				SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.getItems());
 				searchAdapter.getFilter().filter(inputText);
 				RecyclerView recyclerView = findViewById(R.id.search_recycle);
 				recyclerView.setAdapter(searchAdapter);
@@ -184,7 +184,7 @@ public class SearchActivity extends AppCompatActivity {
 		});
 
 		/* Populate the search list with all items by default */
-		SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.items);
+		SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.getItems());
 		searchAdapter.getFilter().filter("");
 		recyclerView.setAdapter(searchAdapter);
 
