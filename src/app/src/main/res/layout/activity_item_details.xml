@@ -25,6 +25,9 @@
                 android:paddingRight="8dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="6dp"
+                android:scaleType="fitCenter"
+
+
         >
         </androidx.recyclerview.widget.RecyclerView>
         <LinearLayout
