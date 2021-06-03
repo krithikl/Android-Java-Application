@@ -66,7 +66,7 @@ public class SearchActivity extends AppCompatActivity {
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(SearchActivity.this, imageName));
 			viewholder.makeText.setText("Make: " + make);
 			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
-			viewholder.priceText.setText("Price: " + Float.toString(price));
+			viewholder.priceText.setText("Price: " + Float.toString(price) + "¢");
 
 			viewholder.layout.setOnClickListener(new View.OnClickListener() {
 				@Override
