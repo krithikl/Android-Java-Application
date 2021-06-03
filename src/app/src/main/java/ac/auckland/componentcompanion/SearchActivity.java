@@ -165,6 +165,10 @@ public class SearchActivity extends AppCompatActivity {
 		searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
 			public boolean onQueryTextSubmit(String query) {
+				if (query.equals("DBG_RESET_VIEWS")) {
+					dloader.resetViews();
+				}
+
 				SearchActivity.searchAdapter searchAdapter = new SearchActivity.searchAdapter(dataloader.getItems());
 				searchAdapter.getFilter().filter(query);
 				RecyclerView recyclerView = findViewById(R.id.search_recycle);
