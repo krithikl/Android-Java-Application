@@ -96,20 +96,20 @@
                     android:text="@string/category_one"
                     style="@style/Theme.ComponentCompanion.CatButton"
 
-            />
+                    android:layout_height="match_parent"/>
 
 
             <Button
                     android:id="@+id/cat1Btn"
                     android:text="@string/category_two"
                     style="@style/Theme.ComponentCompanion.CatButton"
-            />
+                    android:layout_height="match_parent"/>
 
             <Button
                     android:id="@+id/cat2Btn"
                     android:text="@string/category_three"
                     style="@style/Theme.ComponentCompanion.CatButton"
-            />
+                    android:layout_height="match_parent"/>
 
         </LinearLayout>
 
