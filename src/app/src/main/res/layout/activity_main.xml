@@ -40,13 +40,15 @@
 
         <EditText
                 android:id="@+id/editTextTextPersonName7"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:inputType="none"
                 android:enabled="false"
+                android:textAlignment="center"
                 android:ems="10"
                 android:text="Top Picks"
                 android:textColor="@color/white"

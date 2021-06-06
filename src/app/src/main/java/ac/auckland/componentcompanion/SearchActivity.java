@@ -168,6 +168,8 @@ public class SearchActivity extends AppCompatActivity {
 		recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.VERTICAL, false));
 		recyclerView.setAdapter(adapter);
 
+
+		/* Search bar setup for query and submits, type DBG_RESET_VIEWS and press ENTER to reset the views on top picks*/
 		SearchView searchBar = findViewById(R.id.searchBar);
 		searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 			@Override
