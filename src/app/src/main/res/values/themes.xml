@@ -28,22 +28,22 @@
     </style>
 
     <!-- Custom Theme for buttons test. -->
-    <style name="Theme.ComponentCompanion.CatButton" parent="@style/Widget.MaterialComponents.Button">
+    <style name="Theme.ComponentCompanion.CatButton" parent="@style/Widget.MaterialComponents.TimePicker.ImageButton">
         <item name="android:textColor">#ffcc80</item>
-        <item name="android:textSize">12dp</item>
+        <item name="android:textSize">16dp</item>
         <item name="backgroundTint">#1b1b1b</item>
         <item name="cornerRadius">12dp</item>
         <item name="strokeColor">#ffcc80</item>
         <item name="rippleColor">#ffcc80</item>
         <item name="strokeWidth">2dp</item>
 
-        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:paddingLeft">15dp</item>
         <item name="android:paddingRight">15dp</item>
-        <item name="android:paddingTop">35dp</item>
-        <item name="android:paddingBottom">35dp</item>
+        <item name="android:paddingTop">30dp</item>
+        <item name="android:paddingBottom">30dp</item>
         <item name="android:layout_margin">8dp</item>
     </style>
 
