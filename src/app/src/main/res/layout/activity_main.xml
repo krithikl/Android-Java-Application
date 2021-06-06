@@ -89,55 +89,49 @@
                 android:layout_gravity="center"
 
         />
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="267dp"
+                android:layout_gravity="center"
+                android:layout_height="264dp"
+        >
+            <ImageButton
+                    android:id="@+id/cat0Btn"
+                    android:text="@string/category_one"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/resistors_edited"
+                    android:scaleType="fitXY"
+                    android:background="@android:color/transparent"
+                    android:layout_margin="8dp"
+            />
+            <ImageButton
+                    android:id="@+id/cat1Btn"
+                    android:text="@string/category_two"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/capacitors_edited"
+                    android:scaleType="fitXY"
+                    android:background="@android:color/transparent"
+                    android:layout_margin="8dp"
+            />
+            <ImageButton
+                    android:id="@+id/cat2Btn"
+                    android:text="@string/category_three"
 
-        <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="325dp" android:id="@+id/frameLayout">
-
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="275dp"
-                    android:layout_gravity="center"
-                    android:layout_height="match_parent">
-                <ImageButton
-                        android:id="@+id/cat0Btn"
-                        android:text="@string/category_one"
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:layout_weight="1"
-                        android:src="@drawable/resistors_edited"
-                        android:scaleType="fitXY"
-                        android:background="@android:color/transparent"
-                        android:layout_margin="8dp"
-                />
-                <ImageButton
-                        android:id="@+id/cat1Btn"
-                        android:text="@string/category_two"
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:layout_weight="1"
-                        android:src="@drawable/capacitors_edited"
-                        android:scaleType="fitXY"
-                        android:background="@android:color/transparent"
-                        android:layout_margin="8dp"
-                />
-                <ImageButton
-                        android:id="@+id/cat2Btn"
-                        android:text="@string/category_three"
-
-                        android:layout_height="match_parent"
-                        android:layout_width="wrap_content"
-                        android:layout_weight="1"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/inductors_edited"
-                        android:background="@android:color/transparent"
-                        android:layout_margin="8dp"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/inductors_edited"
+                    android:background="@android:color/transparent"
+                    android:layout_margin="8dp"
 
 
-
-                />
-            </LinearLayout>
-        </FrameLayout>
+            />
+        </LinearLayout>
 
 
     </LinearLayout>
