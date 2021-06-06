@@ -2,6 +2,7 @@ package ac.auckland.componentcompanion;
 
 import java.util.ArrayList;
 
+/* Initialise category class, defines category which adds items into itself with the parameters listed*/
 public class Category {
 	private String name; /* Resistor, Capacitor, Inductor */
 	private ArrayList<Item> items;

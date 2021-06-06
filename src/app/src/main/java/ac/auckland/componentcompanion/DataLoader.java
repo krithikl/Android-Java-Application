@@ -59,6 +59,7 @@ public class DataLoader {
 
 		String[][] rawData = DataProvider.getData();
 
+		/* Adds item parameters into specified category. Cat0 = Resistors, cat1 = capacitors, cat2 = inductors */
 		for (int i = 0; i < 10; ++i) {
 			this.items.add(new Item(rawData[i][0], rawData[i][1], rawData[i][2], Float.parseFloat(rawData[i][3]), rawData[i][4], Float.parseFloat(rawData[i][5]), rawData[i][6]));
 			this.category0.addItem(this.items.get(this.items.size() - 1));
@@ -89,10 +90,12 @@ public class DataLoader {
 		return null;
 	}
 
+	/* Method call to return the number of views an item has*/
 	public int getItemViews(int index) {
 		return DataLoader.views[index];
 	}
 
+	/* Fetches top 6 items with the most views and appends to top picks section*/
 	public ArrayList<Item> getTopSix() {
 		ArrayList<Item> items = new ArrayList<Item>(0);
 		int[] alreadyCounted = new int[5];

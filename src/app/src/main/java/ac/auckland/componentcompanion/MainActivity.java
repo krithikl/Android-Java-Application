@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
 		setUpTopPicks();
 
+		/* Defining buttons on main view to be clicked on and start related activity */
 		ImageButton cat0Btn = findViewById(R.id.cat0Btn);
 		ImageButton cat1Btn = findViewById(R.id.cat1Btn);
 		ImageButton cat2Btn = findViewById(R.id.cat2Btn);
