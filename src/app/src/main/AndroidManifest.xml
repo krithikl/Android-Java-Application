@@ -20,7 +20,7 @@
         </activity>
         <activity
                 android:name="ac.auckland.componentcompanion.ItemListActivity"
-                android:label="Component Companion | Category List"
+                android:label="Component Companion | Item List"
                 android:theme="@style/Theme.ComponentCompanion"
                 android:screenOrientation="portrait">
         </activity>

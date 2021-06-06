@@ -2,6 +2,7 @@ package ac.auckland.componentcompanion;
 
 import android.content.Context;
 import android.content.Intent;
+import android.transition.Transition;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -127,9 +128,11 @@ public class SearchActivity extends AppCompatActivity {
 				itemList.addAll((ArrayList<Item>) filterResults.values);
 				if (((ArrayList<Item>) filterResults.values).size() == 0) {
 					((TextView) findViewById(R.id.error_msg)).setVisibility(View.VISIBLE);
+					((RecyclerView) findViewById(R.id.search_recycle)).setVisibility(View.GONE);
 					Log.d(TAG, "Search Failed - Showing Error Msg");
 				} else {
 					((TextView) findViewById(R.id.error_msg)).setVisibility(View.GONE);
+					((RecyclerView) findViewById(R.id.search_recycle)).setVisibility(View.VISIBLE);
 					Log.d(TAG, "Search Successful - Showing Items");
 				}
 				notifyDataSetChanged();

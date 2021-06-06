@@ -145,11 +145,8 @@ public class MainActivity extends AppCompatActivity {
 
 		searchButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Pair<View, String> a0 = Pair.create(findViewById(R.id.searchBar), "search_bar");
-				ActivityOptionsCompat optns = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, a0);
 				Intent activityIntent = new Intent(MainActivity.this, SearchActivity.class);
 				MainActivity.this.startActivity(activityIntent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
-				//MainActivity.this.startActivity(activityIntent, optns.toBundle());
 			}
 		});
 
