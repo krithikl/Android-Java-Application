@@ -15,7 +15,8 @@
             android:scaleType="fitCenter"
             android:background="@drawable/top_pick_style"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="2dp"/>
+            android:layout_marginRight="2dp"
+            android:transitionName="item_details"/>
     <Button
             android:id="@+id/topPickMake"
             style="@style/Theme.ComponentCompanion.topPickButton"
@@ -32,16 +33,16 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="10dp"
             android:paddingLeft="4dp"
-            android:textAlignment="center"
             android:textColor="@color/white"
             android:background="@drawable/top_pick_style"
             android:backgroundTint="#1b1b1b"
             android:id="@+id/topPickViews"
-            android:gravity="center_vertical"
+            android:gravity="center"
             android:textAllCaps="false"
             android:textSize="12sp"
             android:textStyle="bold"
             android:paddingRight="4dp"
+            android:transitionName="item_details_price_make"
     />
 
 </LinearLayout>

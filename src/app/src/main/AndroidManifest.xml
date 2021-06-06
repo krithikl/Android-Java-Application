@@ -13,19 +13,21 @@
             android:theme="@style/Theme.ComponentCompanion">
         <activity
                 android:name="ac.auckland.componentcompanion.ItemDetailsActivity"
-                android:theme="@style/ActivityTransition"
+                android:label="Component Companion | Item Details"
+                android:theme="@style/Theme.ComponentCompanion"
                 android:screenOrientation="portrait"
         >
         </activity>
         <activity
                 android:name="ac.auckland.componentcompanion.ItemListActivity"
-                android:theme="@style/ActivityTransition"
+                android:label="Component Companion | Category List"
+                android:theme="@style/Theme.ComponentCompanion"
                 android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name="ac.auckland.componentcompanion.SearchActivity"
-                android:label="@string/title_activity_search"
-                android:theme="@style/Theme.ComponentCompanion.NoActionBar"
+                android:label="Component Companion | Search"
+                android:theme="@style/Theme.ComponentCompanion"
                 android:screenOrientation="portrait">
         </activity>
         <activity android:name="ac.auckland.componentcompanion.MainActivity"

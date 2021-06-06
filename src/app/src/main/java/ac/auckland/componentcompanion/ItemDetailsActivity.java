@@ -85,8 +85,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
 		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
 			@Override
 			public void handleOnBackPressed() {
-				finish();
-				overridePendingTransition(0, android.R.anim.slide_out_right);
+				finishAfterTransition();
 			}
 		};
 		getOnBackPressedDispatcher().addCallback(this, backButtonCall);

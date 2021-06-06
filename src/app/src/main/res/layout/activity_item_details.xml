@@ -34,6 +34,7 @@
                     android:id="@+id/image"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/top_pick_style"
+                    android:transitionName="item_details_transition"
                     />
             <TextView
                     android:text="TextView"
@@ -49,7 +50,7 @@
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/top_pick_style"
                     android:backgroundTint="#1b1b1b"
-
+                    android:transitionName="item_details_price"
                     android:lines="1"/>
         </LinearLayout>
     </LinearLayout>
@@ -73,7 +74,9 @@
                 android:background="@drawable/top_pick_style"
                 android:backgroundTint="#1b1b1b"
                 android:paddingRight="8dp"
-                android:lines="1"/>
+                android:lines="1"
+                android:transitionName="item_details_make"
+        />
         <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"
@@ -87,7 +90,8 @@
                 android:layout_marginBottom="16dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:lines="1"/>
+                android:lines="1"
+                android:transitionName="item_details_value" />
         <TextView
                 android:text="TextView"
                 android:layout_width="wrap_content"

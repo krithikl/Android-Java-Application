@@ -17,7 +17,7 @@
           android:backgroundTint="#373737"
           android:layout_marginTop="5dp"
           android:background="@drawable/top_pick_style"
-
+          android:transitionName="item_details_transition"
   />
     <LinearLayout
             android:orientation="vertical"

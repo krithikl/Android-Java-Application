@@ -1,11 +1,16 @@
 package ac.auckland.componentcompanion;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.util.Log;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.core.util.Pair;
 import android.view.*;
 
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -58,33 +63,21 @@ public class MainActivity extends AppCompatActivity {
 
 			viewholder.imageButton.setImageDrawable(Util.drawableFromAsset(MainActivity.this, imageName));
 			viewholder.topPickText.setText(topPickMake);
-			viewholder.topPickViews.setText("Views: " + itemViews);
+			viewholder.topPickViews.setText("Views: ".concat(itemViews));
 
-			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
-				@Override
+			View.OnClickListener activity_func = new View.OnClickListener() {
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Pair<View, String> a0 = Pair.create(viewholder.imageButton, "item_details_transition");
+
+					ActivityOptionsCompat optns = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, a0);
 					Intent mainIntent = new Intent(MainActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
-					MainActivity.this.startActivity(mainIntent);
-					overridePendingTransition(R.anim.slide_in_right, 0);
-
-
+					MainActivity.this.startActivity(mainIntent, optns.toBundle());
 				}
-			});
-
-			viewholder.topPickText.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
-					Intent mainIntent = new Intent(MainActivity.this, ItemDetailsActivity.class);
-					mainIntent.putExtra("itemID", imageID);
-					MainActivity.this.startActivity(mainIntent);
-					overridePendingTransition(R.anim.slide_in_right, 0);
-
-
-				}
-			});
+			};
+			viewholder.imageButton.setOnClickListener(activity_func);
+			viewholder.topPickText.setOnClickListener(activity_func);
 		}
 
 		public int getItemCount() {
@@ -99,13 +92,17 @@ public class MainActivity extends AppCompatActivity {
 
 	protected void setUpTopPicks() {
 		ArrayList<Item> topPicks = dloader.getTopSix();
-
 		RecyclerView recyclerView = findViewById(R.id.top_picks);
 		TopPicksAdapter adapter = new TopPicksAdapter(topPicks);
+		Parcelable recyclerViewState = null;
+		if (recyclerView.getLayoutManager() != null)
+			 recyclerViewState = recyclerView.getLayoutManager().onSaveInstanceState();
 
 		recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 		recyclerView.setAdapter(adapter);
-		recyclerView.scrollToPosition(0);
+
+		if (recyclerViewState != null)
+			recyclerView.getLayoutManager().onRestoreInstanceState(recyclerViewState);
 	}
 
 	@Override
@@ -125,9 +122,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Resistor");
-
-				startActivity(activityIntent);
-				overridePendingTransition(android.R.anim.slide_in_left, 0);
+				MainActivity.this.startActivity(activityIntent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
 			}
 		});
 
@@ -135,10 +130,7 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Capacitor");
-				startActivity(activityIntent);
-				overridePendingTransition(R.anim.push_up_in, 0);
-
-
+				MainActivity.this.startActivity(activityIntent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
 			}
 		});
 
@@ -146,19 +138,24 @@ public class MainActivity extends AppCompatActivity {
 			public void onClick(View view) {
 				Intent activityIntent = new Intent(MainActivity.this, ItemListActivity.class);
 				activityIntent.putExtra("CATEGORY", "Inductor");
-				startActivity(activityIntent);
-				overridePendingTransition(R.anim.slide_in_right, 0);
+				MainActivity.this.startActivity(activityIntent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
 			}
 		});
 
 		searchButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
+				Pair<View, String> a0 = Pair.create(findViewById(R.id.searchBar), "search_bar");
+				ActivityOptionsCompat optns = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, a0);
 				Intent activityIntent = new Intent(MainActivity.this, SearchActivity.class);
-				startActivity(activityIntent);
-				overridePendingTransition(android.R.anim.fade_in,0);
+				MainActivity.this.startActivity(activityIntent, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
+				//MainActivity.this.startActivity(activityIntent, optns.toBundle());
 			}
 		});
 
+	}
+
+	protected void onStop() {
+		super.onStop();
 	}
 
 	protected void onResume() {
@@ -166,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
 		/* Update top picks */
 		setUpTopPicks();
 		Log.d(TAG, "In onResume()");
-
 	}
 
 }

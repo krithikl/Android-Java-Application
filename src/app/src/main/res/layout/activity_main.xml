@@ -35,6 +35,7 @@
                 app:strokeWidth="1dp"
                 app:strokeColor="#ffcc80"
                 app:rippleColor="#ffcc80"
+                android:transitionName="search_bar"
             />
         </LinearLayout>
 

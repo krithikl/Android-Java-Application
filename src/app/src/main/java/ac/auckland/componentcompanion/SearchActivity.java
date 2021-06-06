@@ -11,6 +11,8 @@ import android.widget.*;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.util.Pair;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,31 +70,20 @@ public class SearchActivity extends AppCompatActivity {
 			viewholder.valueText.setText("Value: " + Float.toString(value) + unit);
 			viewholder.priceText.setText("Price: " + Float.toString(price) + "¢");
 
-			viewholder.layout.setOnClickListener(new View.OnClickListener() {
-				@Override
+			View.OnClickListener activity_func = new View.OnClickListener() {
 				public void onClick(View v) {
 					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
+					Pair<View, String> a0 = Pair.create(viewholder.imageButton, "item_details_transition");
+					ActivityOptionsCompat optns = ActivityOptionsCompat.makeSceneTransitionAnimation(SearchActivity.this, a0);
+
 					Intent mainIntent = new Intent(SearchActivity.this, ItemDetailsActivity.class);
 					mainIntent.putExtra("itemID", imageID);
-					SearchActivity.this.startActivity(mainIntent);
-					overridePendingTransition(R.anim.slide_in_right,0);
-
-
+					SearchActivity.this.startActivity(mainIntent, optns.toBundle());
 				}
-			});
+			};
 
-			viewholder.imageButton.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					Log.d(TAG, "Top Pick Item Clicked (Layout)!");
-					Intent mainIntent = new Intent(SearchActivity.this, ItemDetailsActivity.class);
-					mainIntent.putExtra("itemID", imageID);
-					SearchActivity.this.startActivity(mainIntent);
-					overridePendingTransition(R.anim.slide_in_right,0);
-
-
-				}
-			});
+			viewholder.layout.setOnClickListener(activity_func);
+			viewholder.imageButton.setOnClickListener(activity_func);
 
 		}
 
@@ -208,8 +199,7 @@ public class SearchActivity extends AppCompatActivity {
 		OnBackPressedCallback backButtonCall = new OnBackPressedCallback(true /* enabled by default */) {
 			@Override
 			public void handleOnBackPressed() {
-				finish();
-				overridePendingTransition(0,R.anim.push_down_out);
+				finishAfterTransition();
 			}
 		};
 		getOnBackPressedDispatcher().addCallback(this, backButtonCall);
