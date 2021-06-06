@@ -41,13 +41,15 @@
 
         <EditText
                 android:id="@+id/editTextTextPersonName7"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:inputType="none"
                 android:enabled="false"
+                android:textAlignment="center"
                 android:ems="10"
                 android:text="Top Picks"
                 android:textColor="@color/white"
@@ -72,47 +74,71 @@
                 android:layout_height="wrap_content" android:layout_weight="3"/>
         <EditText
                 android:id="@+id/editTextTextPersonName2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
                 android:textIsSelectable="false"
+                android:textAlignment="center"
                 android:ems="10"
                 android:inputType="none"
                 android:enabled="false"
                 android:text="Categories"
                 android:textColor="@color/white"
+                android:layout_gravity="center"
 
         />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_weight="2"
-            android:orientation="horizontal" >
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="325dp" android:id="@+id/frameLayout">
 
-            <Button
-                    android:id="@+id/cat0Btn"
-                    android:text="@string/category_one"
-                    style="@style/Theme.ComponentCompanion.CatButton"
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="275dp"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent">
+                <ImageButton
+                        android:id="@+id/cat0Btn"
+                        android:text="@string/category_one"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/resistors_edited"
+                        android:scaleType="fitXY"
+                        android:background="@android:color/transparent"
+                        android:layout_margin="8dp"
+                />
+                <ImageButton
+                        android:id="@+id/cat1Btn"
+                        android:text="@string/category_two"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:src="@drawable/capacitors_edited"
+                        android:scaleType="fitXY"
+                        android:background="@android:color/transparent"
+                        android:layout_margin="8dp"
+                />
+                <ImageButton
+                        android:id="@+id/cat2Btn"
+                        android:text="@string/category_three"
 
-                    android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/inductors_edited"
+                        android:background="@android:color/transparent"
+                        android:layout_margin="8dp"
 
 
-            <Button
-                    android:id="@+id/cat1Btn"
-                    android:text="@string/category_two"
-                    style="@style/Theme.ComponentCompanion.CatButton"
-                    android:layout_height="match_parent"/>
 
-            <Button
-                    android:id="@+id/cat2Btn"
-                    android:text="@string/category_three"
-                    style="@style/Theme.ComponentCompanion.CatButton"
-                    android:layout_height="match_parent"/>
-
-        </LinearLayout>
+                />
+            </LinearLayout>
+        </FrameLayout>
 
 
     </LinearLayout>

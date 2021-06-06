@@ -113,9 +113,10 @@ public class MainActivity extends AppCompatActivity {
 
 		setUpTopPicks();
 
-		Button cat0Btn = findViewById(R.id.cat0Btn);
-		Button cat1Btn = findViewById(R.id.cat1Btn);
-		Button cat2Btn = findViewById(R.id.cat2Btn);
+		/* Defining buttons on main view to be clicked on and start related activity */
+		ImageButton cat0Btn = findViewById(R.id.cat0Btn);
+		ImageButton cat1Btn = findViewById(R.id.cat1Btn);
+		ImageButton cat2Btn = findViewById(R.id.cat2Btn);
 		Button searchButton = findViewById(R.id.searchBar);
 
 		cat0Btn.setOnClickListener(new View.OnClickListener() {
